@@ -324,11 +324,15 @@
             <div class="flex flex-wrap justify-center gap-2 mb-10 text-xs sm:text-sm font-medium">
                 <button onclick="filterDepartment('all')" class="dept-btn active px-4 py-2 rounded-xl bg-taraNavy text-white shadow-sm transition-all">Semua Sekbid</button>
                 <button onclick="filterDepartment('bph')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">BPH Core</button>
-                <button onclick="filterDepartment('sekbid1')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 1 (Budi Pekerti)</button>
-                <button onclick="filterDepartment('sekbid2')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 2 (Kebangsaan)</button>
-                <button onclick="filterDepartment('sekbid3')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 3 (Olahraga)</button>
-                <button onclick="filterDepartment('sekbid4')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 4 (Seni & Budaya)</button>
-                <button onclick="filterDepartment('sekbid5')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 5 (Teknologi & Media)</button>
+                <button onclick="filterDepartment('sekbid1')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 1 (PDOK)</button>
+                <button onclick="filterDepartment('sekbid2')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 2 (Olahraga)</button>
+                <button onclick="filterDepartment('sekbid3')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 3 (Seni)</button>
+                <button onclick="filterDepartment('sekbid4')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 4 (Bela Negara)</button>
+                <button onclick="filterDepartment('sekbid5')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 5 (HUMAS)</button>
+                <button onclick="filterDepartment('sekbid6')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 6 (Rohani)</button>
+                <button onclick="filterDepartment('sekbid7')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 7 (Multimedia)</button>
+                <button onclick="filterDepartment('sekbid8')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 8 (LINGESTAN)</button>
+                <button onclick="filterDepartment('sekbid9')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 9 (Wirausaha)</button>
             </div>
 
             <!-- Pengurus Grid -->
@@ -545,11 +549,6 @@
 
                 <!-- Col 4: Jam Kerja / Layanan -->
                 <div>
-                    <h4 class="text-sm font-bold uppercase tracking-wider text-taraGold mb-4">Jam Operasional OSIS</h4>
-                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-3">
-                        Senin - Jumat: 14.30 - 16.30 WIB<br>
-                        Ruang OSIS Lantai 2, Gedung SMA Tarakanita 2
-                    </p>
                     <div class="inline-block bg-white/5 border border-white/10 p-3 rounded-xl text-xs text-slate-300">
                         <span class="font-semibold text-taraGold block mb-1">Tagline Tarakanita:</span>
                         "Cerdas, Berintegritas, Memimpin dengan Kasih"
@@ -598,16 +597,22 @@
     <script>
         // Data Store for Interactive Features
         const pengurusData = [
-            { name: "Gabriella Nathania", role: "Ketua OSIS", dept: "bph", img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop", bio: "Kelas XI MIPA 1 • Visi memajukan kreativitas digital & persaudaraan siswa." },
-            { name: "Michael Bryan", role: "Wakil Ketua OSIS", dept: "bph", img: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=400&auto=format&fit=crop", bio: "Kelas XI IPS 2 • Fokus pada koordinasi lintas sekbid dan kepemimpinan." },
-            { name: "Clarissa Aurelia", role: "Sekretaris Umum", dept: "bph", img: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop", bio: "Kelas XI MIPA 2 • Bertanggung jawab atas administrasi & arsip organisasi." },
-            { name: "David Christopher", role: "Bendahara Umum", dept: "bph", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop", bio: "Kelas XI IPS 1 • Mengelola transparansi anggaran & keuangan proker." },
+            { name: "Bryan William", role: "Ketua OSIS", dept: "bph", img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop", bio: "Kelas XI MIPA 1 • Visi memajukan kreativitas digital & persaudaraan siswa." },
+            { name: "Karlita Andri", role: "Wakil Ketua OSIS I", dept: "bph", img: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=400&auto=format&fit=crop", bio: "Kelas XI IPS 2 • Fokus pada koordinasi lintas sekbid dan kepemimpinan." },
+            { name: "Jocelyn Stevanie", role: "Wakil Ketua OSIS II", dept: "bph", img: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop", bio: "Kelas XI MIPA 2 • Bertanggung jawab atas administrasi & arsip organisasi." },
+            { name: "Catherine Angelina Soetarso", role: "Sekretaris I", dept: "bph", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop", bio: "Kelas XI IPS 1 • Mengelola transparansi anggaran & keuangan proker." },
+            { name: "Nathanilova Nachelle Ragilie", role: "Sekretaris II", dept: "bph", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop", bio: "Kelas XI IPS 1 • Mengelola transparansi anggaran & keuangan proker." },
+            { name: "Louis Fernandez", role: "Bendahara", dept: "bph", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop", bio: "Kelas XI IPS 1 • Mengelola transparansi anggaran & keuangan proker." },
             
-            { name: "Theresia Angel", role: "Koordinator Sekbid 1", dept: "sekbid1", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop", bio: "Ketaqwaan & Budi Pekerti • Penyelenggara kegiatan keagamaan & karakter." },
-            { name: "Kevin Sanjaya", role: "Koordinator Sekbid 2", dept: "sekbid2", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop", bio: "Kebangsaan & Bela Negara • Mengomandoi upacara & aksi bakti sosial." },
-            { name: "Jason Edward", role: "Koordinator Sekbid 3", dept: "sekbid3", img: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=400&auto=format&fit=crop", bio: "Prestasi & Olahraga • Penanggung jawab Classmeeting & Tarakupang Sports." },
-            { name: "Vanessa Putri", role: "Koordinator Sekbid 4", dept: "sekbid4", img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop", bio: "Seni & Budaya • Mengelola pentas seni, Bulan Bahasa & kompetisi kreatif." },
-            { name: "Brandon Lee", role: "Koordinator Sekbid 5", dept: "sekbid5", img: "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?q=80&w=400&auto=format&fit=crop", bio: "Teknologi & Informasi • Pengelola media sosial, publikasi, & liputan event." }
+            { name: "Charlotte Leticia Alamsyah", role: "Koordinator Sekbid 1", dept: "sekbid1", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop", bio: "Ketaqwaan & Budi Pekerti • Penyelenggara kegiatan keagamaan & karakter." },
+            { name: "Gerald Clarence", role: "Koordinator Sekbid 2", dept: "sekbid2", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop", bio: "Kebangsaan & Bela Negara • Mengomandoi upacara & aksi bakti sosial." },
+            { name: "Danica Eileen Fiemawan", role: "Koordinator Sekbid 3", dept: "sekbid3", img: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=400&auto=format&fit=crop", bio: "Prestasi & Olahraga • Penanggung jawab Classmeeting & Tarakupang Sports." },
+            { name: "Roger William Chua", role: "Koordinator Sekbid 4", dept: "sekbid4", img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop", bio: "Seni & Budaya • Mengelola pentas seni, Bulan Bahasa & kompetisi kreatif." },
+            { name: "Katy Perrylius", role: "Koordinator Sekbid 5", dept: "sekbid5", img: "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?q=80&w=400&auto=format&fit=crop", bio: "Teknologi & Informasi • Pengelola media sosial, publikasi, & liputan event." }
+            { name: "Hector Christopher Adisam", role: "Koordinator Sekbid 6", dept: "sekbid6", img: "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?q=80&w=400&auto=format&fit=crop", bio: "Teknologi & Informasi • Pengelola media sosial, publikasi, & liputan event." }
+            { name: "Janice Allison Chandra", role: "Koordinator Sekbid 7", dept: "sekbid7", img: "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?q=80&w=400&auto=format&fit=crop", bio: "Teknologi & Informasi • Pengelola media sosial, publikasi, & liputan event." }
+            { name: "Manessha Mirvin Huang", role: "Koordinator Sekbid 8", dept: "sekbid8", img: "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?q=80&w=400&auto=format&fit=crop", bio: "Teknologi & Informasi • Pengelola media sosial, publikasi, & liputan event." }
+            { name: "Matthew Sebastian", role: "Koordinator Sekbid 9", dept: "sekbid9", img: "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?q=80&w=400&auto=format&fit=crop", bio: "Teknologi & Informasi • Pengelola media sosial, publikasi, & liputan event." }
         ];
 
         const eventsData = [
