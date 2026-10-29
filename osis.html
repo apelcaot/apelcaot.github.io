@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSIS SMA Tarakanita 2 Jakarta - Portal Resmi</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Custom Color Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        taraNavy: {
+                            DEFAULT: '#1B365D',
+                            50: '#F0F4F9',
+                            100: '#DCE4F0',
+                            800: '#152B4B',
+                            900: '#0F1E35',
+                        },
+                        taraGold: {
+                            DEFAULT: '#D4AF37',
+                            hover: '#C09B27',
+                            light: '#FFF9E6',
+                            accent: '#F2A900'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom scrollbar & visual aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1B365D;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(27, 54, 93, 0.95) 0%, rgba(15, 30, 53, 0.88) 100%), 
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen selection:bg-taraGold selection:text-taraNavy">
+
+    <!-- Top Info Bar -->
+    <div class="bg-taraNavy-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-700/50">
+        <div class="max-w-7xl mx-mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 container mx-auto">
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-taraGold"></i> SMA Tarakanita 2 Jakarta</span>
+                <span class="hidden md:flex items-center gap-1.5"><i class="fa-solid fa-envelope text-taraGold"></i> osis@smatarakanita2.sch.id</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="font-semibold text-taraGold">Cc5+:</span>
+                <span class="text-[11px] tracking-wide text-slate-300">Compassion • Celebration • Competence • Conviction • Creativity • Community</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-4 lg:px-8 py-3 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#beranda" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-taraNavy flex items-center justify-center text-taraGold text-xl font-bold shadow-md group-hover:scale-105 transition-transform duration-300 border border-taraGold/40">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <span class="block text-lg font-extrabold text-taraNavy leading-tight tracking-tight">OSIS TARAKANITA 2</span>
+                    <span class="block text-xs font-semibold text-taraGold tracking-widest uppercase">SMA Tarakanita 2 Jakarta</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-700">
+                <a href="#beranda" class="hover:text-taraNavy transition-colors py-1 border-b-2 border-transparent hover:border-taraGold">Beranda</a>
+                <a href="#nilai-visi" class="hover:text-taraNavy transition-colors py-1 border-b-2 border-transparent hover:border-taraGold">Cc5+ & Visi</a>
+                <a href="#pengurus" class="hover:text-taraNavy transition-colors py-1 border-b-2 border-transparent hover:border-taraGold">Pengurus OSIS</a>
+                <a href="#program" class="hover:text-taraNavy transition-colors py-1 border-b-2 border-transparent hover:border-taraGold">Program Kerja</a>
+                <a href="#galeri" class="hover:text-taraNavy transition-colors py-1 border-b-2 border-transparent hover:border-taraGold">Galeri</a>
+                <a href="#pengumuman" class="hover:text-taraNavy transition-colors py-1 border-b-2 border-transparent hover:border-taraGold">Pengumuman</a>
+                <a href="#aspirasi" class="hover:text-taraNavy transition-colors py-1 border-b-2 border-transparent hover:border-taraGold">Aspirasi</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="hidden sm:flex items-center gap-3">
+                <button onclick="toggleSearchModal()" class="p-2.5 rounded-full text-slate-600 hover:text-taraNavy hover:bg-slate-100 transition-colors" title="Cari Informasi">
+                    <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                </button>
+                <a href="#kontak" class="bg-taraNavy hover:bg-taraNavy-800 text-white text-xs md:text-sm font-semibold px-4 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center gap-2 border border-taraGold/30">
+                    <i class="fa-solid fa-paper-plane text-taraGold"></i> Hubungi OSIS
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Nav Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-3 transition-all duration-300">
+            <a href="#beranda" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-taraNavy font-medium border-b border-slate-100">Beranda</a>
+            <a href="#nilai-visi" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-taraNavy font-medium border-b border-slate-100">Nilai Cc5+ & Visi Misi</a>
+            <a href="#pengurus" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-taraNavy font-medium border-b border-slate-100">Pengurus OSIS</a>
+            <a href="#program" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-taraNavy font-medium border-b border-slate-100">Program Kerja & Event</a>
+            <a href="#galeri" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-taraNavy font-medium border-b border-slate-100">Galeri Kegiatan</a>
+            <a href="#pengumuman" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-taraNavy font-medium border-b border-slate-100">Pengumuman & Berita</a>
+            <a href="#aspirasi" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-taraNavy font-medium border-b border-slate-100">Kotak Aspirasi</a>
+            <a href="#kontak" onclick="toggleMobileMenu()" class="block py-2 text-taraNavy font-bold">Kontak & Lokasi</a>
+        </div>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <section id="beranda" class="relative hero-bg text-white py-20 lg:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-taraNavy-900/90 via-transparent to-transparent pointer-events-none"></div>
+        <div class="container mx-auto relative z-10 max-w-5xl text-center space-y-8">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-taraGold/20 border border-taraGold/40 text-taraGold text-xs sm:text-sm font-semibold tracking-wide backdrop-blur-md">
+                <i class="fa-solid fa-star"></i> Kabinet OSIS SMA Tarakanita 2 Periode 2026/2027
+            </div>
+            
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                Cerdas, Berkarakter, <br class="hidden sm:inline">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-taraGold via-yellow-200 to-taraGold">Berkarya untuk Masa Depan</span>
+            </h1>
+
+            <p class="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed font-light">
+                Wadah aspirasi, kreativitas, dan kepemimpinan peserta didik SMA Tarakanita 2 Jakarta. Mengobarkan semangat solidaritas dan keunggulan berlandaskan nilai-nilai Cc5+.
+            </p>
+
+            <!-- Hero Action Buttons -->
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-2">
+                <a href="#program" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-taraGold hover:bg-taraGold-hover text-taraNavy font-bold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-calendar-check"></i> Lihat Program Kerja
+                </a>
+                <a href="#aspirasi" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold backdrop-blur-md border border-white/30 transition-all text-center flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-comment-dots text-taraGold"></i> Suarakan Aspirasimu
+                </a>
+            </div>
+
+            <!-- Quick Statistics Counter Grid -->
+            <div class="pt-12 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 border-t border-white/10 mt-12">
+                <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                    <div class="text-2xl sm:text-4xl font-extrabold text-taraGold mb-1" id="stat-pengurus">32</div>
+                    <div class="text-xs sm:text-sm text-slate-300 font-medium">Pengurus OSIS</div>
+                </div>
+                <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                    <div class="text-2xl sm:text-4xl font-extrabold text-taraGold mb-1" id="stat-proker">18+</div>
+                    <div class="text-xs sm:text-sm text-slate-300 font-medium">Program Kerja</div>
+                </div>
+                <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                    <div class="text-2xl sm:text-4xl font-extrabold text-taraGold mb-1" id="stat-ekskul">14</div>
+                    <div class="text-xs sm:text-sm text-slate-300 font-medium">Ekstrakurikuler</div>
+                </div>
+                <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                    <div class="text-2xl sm:text-4xl font-extrabold text-taraGold mb-1" id="stat-event">100%</div>
+                    <div class="text-xs sm:text-sm text-slate-300 font-medium">Semangat Kolaborasi</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. NILAI TARAKANITA (Cc5+) & VISI MISI SECTION -->
+    <section id="nilai-visi" class="py-20 bg-slate-100/60">
+        <div class="container mx-auto px-4 lg:px-8 max-w-7xl">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-taraGold font-bold text-xs sm:text-sm tracking-widest uppercase bg-taraNavy/5 px-3 py-1 rounded-full border border-taraNavy/10">Landasan Karakter</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-taraNavy">Nilai Tarakanita (Cc5+)</h2>
+                <p class="text-slate-600 text-sm sm:text-base">Membangun kepribadian utuh siswa SMA Tarakanita 2 melalui enam pilar utama yang terus dihidupi dalam setiap kegiatan OSIS.</p>
+            </div>
+
+            <!-- Cc5+ Interactive Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+                <!-- Compassion -->
+                <div onclick="openCc5Modal('Compassion', 'Bela rasa dan peduli terhadap sesama yang membutuhkan, menumbuhkan rasa empati dalam kehidupan bermasyarakat.', 'fa-heart')" 
+                     class="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 hover:-translate-y-1 cursor-pointer relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-taraNavy mb-2 group-hover:text-taraGold transition-colors">Compassion</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Belarasa, kepedulian, dan empati tanpa membeda-bedakan sesama.</p>
+                    <span class="text-xs font-semibold text-taraNavy inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">Pelajari Detail <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                </div>
+
+                <!-- Celebration -->
+                <div onclick="openCc5Modal('Celebration', 'Bersyukur atas rahmat Tuhan dalam segala situasi serta mengapresiasi setiap karya dan prestasi sesama dengan suka cita.', 'fa-hands-clapping')" 
+                     class="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 hover:-translate-y-1 cursor-pointer relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-hands-clapping"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-taraNavy mb-2 group-hover:text-taraGold transition-colors">Celebration</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Rasa syukur, kegembiraan sejati, dan apresiasi positif atas keberagaman.</p>
+                    <span class="text-xs font-semibold text-taraNavy inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">Pelajari Detail <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                </div>
+
+                <!-- Competence -->
+                <div onclick="openCc5Modal('Competence', 'Berdaya juang tinggi untuk senantiasa belajar, menguasai ilmu pengetahuan, serta mengasah bakat hingga mencapai keunggulan akademik dan non-akademik.', 'fa-award')" 
+                     class="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 hover:-translate-y-1 cursor-pointer relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-taraNavy mb-2 group-hover:text-taraGold transition-colors">Competence</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Daya juang untuk terus belajar, cerdas, berilmu, dan terampil.</p>
+                    <span class="text-xs font-semibold text-taraNavy inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">Pelajari Detail <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                </div>
+
+                <!-- Conviction -->
+                <div onclick="openCc5Modal('Conviction', 'Memiliki pegangan teguh pada prinsip kebenaran, kejujuran, disiplin, dan keberanian membela kebenaran.', 'fa-shield-halved')" 
+                     class="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 hover:-translate-y-1 cursor-pointer relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-taraNavy mb-2 group-hover:text-taraGold transition-colors">Conviction</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Keteguhan hati, kejujuran, integritas, dan ketahanan dalam nilai kebenaran.</p>
+                    <span class="text-xs font-semibold text-taraNavy inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">Pelajari Detail <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                </div>
+
+                <!-- Creativity -->
+                <div onclick="openCc5Modal('Creativity', 'Berpikir inovatif, terampil menciptakan ide-ide segar, serta tanggap menyelesaikan masalah dengan solusi kreatif.', 'fa-lightbulb')" 
+                     class="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 hover:-translate-y-1 cursor-pointer relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-yellow-100 text-yellow-600 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-taraNavy mb-2 group-hover:text-taraGold transition-colors">Creativity</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Kemampuan daya cipta, inovasi, dan kebaharuan dalam berkarya.</p>
+                    <span class="text-xs font-semibold text-taraNavy inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">Pelajari Detail <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                </div>
+
+                <!-- Community -->
+                <div onclick="openCc5Modal('Community', 'Membangun persaudaraan yang erat, kebersamaan, dan semangat gotong royong antar peserta didik, guru, dan lingkungan.', 'fa-people-group')" 
+                     class="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 hover:-translate-y-1 cursor-pointer relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-taraNavy mb-2 group-hover:text-taraGold transition-colors">Community</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Semangat persaudaraan, persatuan, dan hidup bermasyarakat yang harmonis.</p>
+                    <span class="text-xs font-semibold text-taraNavy inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">Pelajari Detail <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                </div>
+            </div>
+
+            <!-- Visi & Misi Cards -->
+            <div class="bg-taraNavy text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden border border-taraGold/20">
+                <div class="absolute -right-16 -bottom-16 w-64 h-64 rounded-full bg-taraGold/10 blur-3xl pointer-events-none"></div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <!-- Visi -->
+                    <div class="lg:col-span-5 space-y-4">
+                        <div class="inline-block px-3 py-1 rounded-full bg-taraGold/20 text-taraGold text-xs font-bold uppercase tracking-wider">
+                            Visi OSIS
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Menjadi Wadah Kolaboratif, Inovatif & Berintegritas</h3>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            "Mewujudkan OSIS SMA Tarakanita 2 Jakarta sebagai organisasi penggerak yang inklusif, inspiratif, dan tanggap teknologi, serta membentuk generasi muda yang unggul secara intelektual dan memiliki kepribadian kuat berdasarkan nilai-nilai Cc5+."
+                        </p>
+                    </div>
+
+                    <div class="hidden lg:block lg:col-span-1 h-full w-px bg-white/10 mx-auto"></div>
+
+                    <!-- Misi -->
+                    <div class="lg:col-span-6 space-y-4">
+                        <div class="inline-block px-3 py-1 rounded-full bg-taraGold/20 text-taraGold text-xs font-bold uppercase tracking-wider">
+                            Misi Utama
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-taraGold mt-1"></i>
+                                <span>Menyelenggarakan program kerja interaktif yang mengasah minat, bakat, dan jiwa kepemimpinan siswa.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-taraGold mt-1"></i>
+                                <span>Menghidupi dan menginternalisasikan nilai-nilai Cc5+ dalam setiap kegiatan akademik maupun non-akademik.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-taraGold mt-1"></i>
+                                <span>Meningkatkan transparansi komunikasi dan menampung aspirasi seluruh civitas akademika secara terbuka.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-taraGold mt-1"></i>
+                                <span>Mempererat tali persaudaraan antar siswa dan membangun aksi kepedulian sosial di lingkungan masyarakat.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PENGURUS OSIS SPOTLIGHT -->
+    <section id="pengurus" class="py-20 bg-white">
+        <div class="container mx-auto px-4 lg:px-8 max-w-7xl">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <span class="text-taraGold font-bold text-xs sm:text-sm tracking-widest uppercase bg-taraNavy/5 px-3 py-1 rounded-full border border-taraNavy/10">Kabinet Kerja</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-taraNavy">Pengurus OSIS 2026/2027</h2>
+                <p class="text-slate-600 text-sm sm:text-base">Kenali jajaran pimpinan dan ketua seksi bidang yang siap melayani dan berkarya bersama seluruh siswa SMA Tarakanita 2.</p>
+            </div>
+
+            <!-- Department Filters -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10 text-xs sm:text-sm font-medium">
+                <button onclick="filterDepartment('all')" class="dept-btn active px-4 py-2 rounded-xl bg-taraNavy text-white shadow-sm transition-all">Semua Sekbid</button>
+                <button onclick="filterDepartment('bph')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">BPH Core</button>
+                <button onclick="filterDepartment('sekbid1')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 1 (Budi Pekerti)</button>
+                <button onclick="filterDepartment('sekbid2')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 2 (Kebangsaan)</button>
+                <button onclick="filterDepartment('sekbid3')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 3 (Olahraga)</button>
+                <button onclick="filterDepartment('sekbid4')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 4 (Seni & Budaya)</button>
+                <button onclick="filterDepartment('sekbid5')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 5 (Teknologi & Media)</button>
+            </div>
+
+            <!-- Pengurus Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="pengurus-grid">
+                <!-- Profile Cards dynamically managed via JS or template -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. FEATURED EVENTS & PROGRAM KERJA -->
+    <section id="program" class="py-20 bg-slate-900 text-white relative">
+        <div class="container mx-auto px-4 lg:px-8 max-w-7xl relative z-10">
+            
+            <!-- Countdown Banner for Flagship Event -->
+            <div class="bg-gradient-to-r from-taraNavy via-taraNavy-800 to-indigo-950 p-6 sm:p-10 rounded-3xl border border-taraGold/30 shadow-2xl mb-16 flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div class="space-y-3 text-center lg:text-left">
+                    <span class="bg-taraGold/20 text-taraGold px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-taraGold/30">
+                        <i class="fa-solid fa-fire text-amber-400"></i> Event Utama Terdekat
+                    </span>
+                    <h3 class="text-2xl sm:text-4xl font-extrabold text-white">TARAKUPANG 2026 (Tarakanita Cup)</h3>
+                    <p class="text-slate-300 text-sm max-w-xl">Kompetisi Seni, Olahraga, & E-Sports antar SMA se-Jabodetabek. Persiapkan tim sekolahmu dan jadilah juara!</p>
+                </div>
+
+                <!-- Live Countdown -->
+                <div class="flex items-center gap-3 sm:gap-4 text-center">
+                    <div class="bg-white/10 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-white/10 min-w-[65px] sm:min-w-[80px]">
+                        <span class="block text-2xl sm:text-4xl font-black text-taraGold" id="cd-days">14</span>
+                        <span class="text-[10px] sm:text-xs text-slate-300 uppercase font-semibold">Hari</span>
+                    </div>
+                    <span class="text-xl font-bold text-taraGold">:</span>
+                    <div class="bg-white/10 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-white/10 min-w-[65px] sm:min-w-[80px]">
+                        <span class="block text-2xl sm:text-4xl font-black text-taraGold" id="cd-hours">08</span>
+                        <span class="text-[10px] sm:text-xs text-slate-300 uppercase font-semibold">Jam</span>
+                    </div>
+                    <span class="text-xl font-bold text-taraGold">:</span>
+                    <div class="bg-white/10 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-white/10 min-w-[65px] sm:min-w-[80px]">
+                        <span class="block text-2xl sm:text-4xl font-black text-taraGold" id="cd-mins">42</span>
+                        <span class="text-[10px] sm:text-xs text-slate-300 uppercase font-semibold">Menit</span>
+                    </div>
+                    <span class="text-xl font-bold text-taraGold">:</span>
+                    <div class="bg-white/10 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-white/10 min-w-[65px] sm:min-w-[80px]">
+                        <span class="block text-2xl sm:text-4xl font-black text-taraGold" id="cd-secs">15</span>
+                        <span class="text-[10px] sm:text-xs text-slate-300 uppercase font-semibold">Detik</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program Kerja Filter & Showcase Header -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
+                <div>
+                    <span class="text-taraGold font-bold text-xs sm:text-sm tracking-widest uppercase">Agenda Kegiatan</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Program Kerja & Event</h2>
+                </div>
+                <!-- Status Filter Tabs -->
+                <div class="flex bg-slate-800 p-1.5 rounded-2xl border border-slate-700 text-xs sm:text-sm">
+                    <button onclick="filterEvents('akan-datang')" class="event-tab active-tab px-4 py-2 rounded-xl font-semibold transition-all">Akan Datang</button>
+                    <button onclick="filterEvents('berlangsung')" class="event-tab px-4 py-2 rounded-xl font-semibold transition-all text-slate-400 hover:text-white">Sedang Berlangsung</button>
+                    <button onclick="filterEvents('selesai')" class="event-tab px-4 py-2 rounded-xl font-semibold transition-all text-slate-400 hover:text-white">Selesai</button>
+                </div>
+            </div>
+
+            <!-- Event Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="event-grid">
+                <!-- Dynamically Populated Cards -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. GALERI FOTO & VIDEO FLASHBACK -->
+    <section id="galeri" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-4 lg:px-8 max-w-7xl">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <span class="text-taraGold font-bold text-xs sm:text-sm tracking-widest uppercase bg-taraNavy/5 px-3 py-1 rounded-full border border-taraNavy/10">Momen Berharga</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-taraNavy">Galeri Kegiatan Siswa</h2>
+                <p class="text-slate-600 text-sm sm:text-base">Dokumentasi keseruan, kerja keras, dan kebersamaan civitas SMA Tarakanita 2 Jakarta.</p>
+            </div>
+
+            <!-- Photo Grid Gallery -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="gallery-grid">
+                <!-- Dynamic Items -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. BERITA, PENGUMUMAN & KOTAK ASPIRASI ONLINE -->
+    <section id="pengumuman" class="py-20 bg-white border-t border-slate-200">
+        <div class="container mx-auto px-4 lg:px-8 max-w-7xl">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Announcement Board (Left 7 Cols) -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div>
+                        <span class="text-taraGold font-bold text-xs tracking-widest uppercase">Papan Informasi</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-taraNavy mt-1">Pengumuman & Berita OSIS</h2>
+                    </div>
+
+                    <div class="space-y-4" id="announcements-container">
+                        <!-- Dynamic Announcements -->
+                    </div>
+                </div>
+
+                <!-- Kotak Aspirasi Online (Right 5 Cols) -->
+                <div id="aspirasi" class="lg:col-span-5">
+                    <div class="bg-gradient-to-b from-taraNavy-50 to-slate-100 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-xl relative">
+                        <div class="space-y-3 mb-6">
+                            <div class="w-10 h-10 rounded-xl bg-taraNavy text-taraGold flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-taraNavy">Kotak Aspirasi Online</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Punya ide kreatif, saran fasilitas, atau kritik membangun untuk kemajuan SMA Tarakanita 2? Suarakan di sini secara terbuka atau anonim!
+                            </p>
+                        </div>
+
+                        <form id="aspirasi-form" onsubmit="submitAspirasi(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Nama Lengkap (Opsional)</label>
+                                <input type="text" id="asp-nama" placeholder="Tulis nama atau kosongkan untuk Anonim" class="w-full text-sm px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-taraNavy/30 bg-white">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Kelas / Angkatan</label>
+                                <select id="asp-kelas" required class="w-full text-sm px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-taraNavy/30 bg-white">
+                                    <option value="">-- Pilih Kelas --</option>
+                                    <option value="X">Kelas X</option>
+                                    <option value="XI">Kelas XI</option>
+                                    <option value="XII">Kelas XII</option>
+                                    <option value="Alumni / Umum">Alumni / Umum</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Kategori Aspirasi</label>
+                                <select id="asp-kategori" required class="w-full text-sm px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-taraNavy/30 bg-white">
+                                    <option value="Saran Program OSIS">Saran Program OSIS</option>
+                                    <option value="Fasilitas & Lingkungan Sekolah">Fasilitas & Lingkungan Sekolah</option>
+                                    <option value="Kegiatan Ekstrakurikuler">Kegiatan Ekstrakurikuler</option>
+                                    <option value="Lain-lain">Lain-lain</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Pesan Aspirasi & Idea</label>
+                                <textarea id="asp-pesan" rows="4" required placeholder="Tuliskan aspirasi atau ide kreatif kamu..." class="w-full text-sm px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-taraNavy/30 bg-white resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-taraNavy hover:bg-taraNavy-800 text-white font-bold py-3.5 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 border border-taraGold/40">
+                                <i class="fa-solid fa-paper-plane text-taraGold"></i> Kirim Aspirasi Sekarang
+                            </button>
+                        </form>
+
+                        <div id="asp-success" class="hidden mt-4 p-4 rounded-2xl bg-emerald-100 text-emerald-800 text-xs sm:text-sm font-medium border border-emerald-300 text-center">
+                            <i class="fa-solid fa-circle-check text-base text-emerald-600 block mb-1"></i>
+                            Terima kasih! Aspirasimu telah berhasil terkirim ke Pengurus OSIS.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER & KONTAK -->
+    <footer id="kontak" class="bg-taraNavy-900 text-white border-t border-slate-800">
+        <div class="container mx-auto px-4 lg:px-8 py-16 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                
+                <!-- Col 1: About OSIS -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-taraNavy flex items-center justify-center text-taraGold text-xl font-bold border border-taraGold/40">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <span class="text-lg font-bold tracking-tight">OSIS SMA Tarakanita 2</span>
+                    </div>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                        Organisasi Siswa Intra Sekolah SMA Tarakanita 2 Pluit, Jakarta Utara. Berkomitmen membentuk pemimpin muda berkarakter Cc5+.
+                    </p>
+                    <!-- Social Links -->
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="https://instagram.com" target="_blank" class="w-9 h-9 rounded-full bg-white/10 hover:bg-taraGold hover:text-taraNavy flex items-center justify-center text-slate-300 transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://tiktok.com" target="_blank" class="w-9 h-9 rounded-full bg-white/10 hover:bg-taraGold hover:text-taraNavy flex items-center justify-center text-slate-300 transition-colors">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" class="w-9 h-9 rounded-full bg-white/10 hover:bg-taraGold hover:text-taraNavy flex items-center justify-center text-slate-300 transition-colors">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigasi Cepat -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-taraGold mb-4">Navigasi Cepat</h4>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-300">
+                        <li><a href="#beranda" class="hover:text-taraGold transition-colors">Beranda Utama</a></li>
+                        <li><a href="#nilai-visi" class="hover:text-taraGold transition-colors">Nilai Cc5+ & Visi Misi</a></li>
+                        <li><a href="#pengurus" class="hover:text-taraGold transition-colors">Kabinet Pengurus</a></li>
+                        <li><a href="#program" class="hover:text-taraGold transition-colors">Program Kerja & Event</a></li>
+                        <li><a href="#galeri" class="hover:text-taraGold transition-colors">Galeri Dokumentasi</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Sekretariat OSIS -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-taraGold mb-4">Sekretariat</h4>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed space-y-2">
+                        <span class="block"><i class="fa-solid fa-location-dot text-taraGold mr-1.5"></i> Jl. Pluit Permai No.1, Pluit, Kec. Penjaringan, Jakarta Utara, DKI Jakarta 14450</span>
+                        <span class="block"><i class="fa-solid fa-envelope text-taraGold mr-1.5"></i> osis@smatarakanita2.sch.id</span>
+                        <span class="block"><i class="fa-brands fa-whatsapp text-taraGold mr-1.5"></i> +62 812-3456-7890 (Humas)</span>
+                    </p>
+                </div>
+
+                <!-- Col 4: Jam Kerja / Layanan -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-taraGold mb-4">Jam Operasional OSIS</h4>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-3">
+                        Senin - Jumat: 14.30 - 16.30 WIB<br>
+                        Ruang OSIS Lantai 2, Gedung SMA Tarakanita 2
+                    </p>
+                    <div class="inline-block bg-white/5 border border-white/10 p-3 rounded-xl text-xs text-slate-300">
+                        <span class="font-semibold text-taraGold block mb-1">Tagline Tarakanita:</span>
+                        "Cerdas, Berintegritas, Memimpin dengan Kasih"
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-slate-800 mt-12 pt-6 text-center text-xs text-slate-400 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>&copy; 2026 OSIS SMA Tarakanita 2 Jakarta. Hak Cipta Dilindungi.</p>
+                <p class="text-slate-400">Dirancang dengan Kebanggaraan & Dijiwai Semangat Cc5+</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL: Cc5+ Details Popup -->
+    <div id="cc5-modal" class="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 space-y-4 shadow-2xl relative animate-fade-in">
+            <button onclick="closeCc5Modal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-2 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modal-icon" class="w-14 h-14 rounded-2xl bg-taraNavy/10 text-taraNavy flex items-center justify-center text-2xl font-bold"></div>
+            <h3 id="modal-title" class="text-2xl font-bold text-taraNavy"></h3>
+            <p id="modal-desc" class="text-sm text-slate-600 leading-relaxed"></p>
+            <button onclick="closeCc5Modal()" class="w-full py-3 bg-taraNavy text-white rounded-xl font-semibold text-sm">Tutup Info</button>
+        </div>
+    </div>
+
+    <!-- MODAL: Search Popup -->
+    <div id="search-modal" class="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-sm hidden flex items-start justify-center pt-20 px-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full p-4 sm:p-6 space-y-4 shadow-2xl relative">
+            <div class="flex items-center gap-3 border-b border-slate-200 pb-3">
+                <i class="fa-solid fa-magnifying-glass text-slate-400 text-lg"></i>
+                <input type="text" id="search-input" onkeyup="handleSearch()" placeholder="Cari program kerja, pengurus, atau pengumuman..." class="w-full text-base focus:outline-none">
+                <button onclick="toggleSearchModal()" class="text-slate-400 hover:text-slate-600 p-1">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div id="search-results" class="max-h-80 overflow-y-auto space-y-2 text-sm text-slate-600">
+                <p class="text-center py-6 text-slate-400">Ketik kata kunci untuk mencari informasi...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Data Store for Interactive Features
+        const pengurusData = [
+            { name: "Gabriella Nathania", role: "Ketua OSIS", dept: "bph", img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop", bio: "Kelas XI MIPA 1 • Visi memajukan kreativitas digital & persaudaraan siswa." },
+            { name: "Michael Bryan", role: "Wakil Ketua OSIS", dept: "bph", img: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=400&auto=format&fit=crop", bio: "Kelas XI IPS 2 • Fokus pada koordinasi lintas sekbid dan kepemimpinan." },
+            { name: "Clarissa Aurelia", role: "Sekretaris Umum", dept: "bph", img: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop", bio: "Kelas XI MIPA 2 • Bertanggung jawab atas administrasi & arsip organisasi." },
+            { name: "David Christopher", role: "Bendahara Umum", dept: "bph", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop", bio: "Kelas XI IPS 1 • Mengelola transparansi anggaran & keuangan proker." },
+            
+            { name: "Theresia Angel", role: "Koordinator Sekbid 1", dept: "sekbid1", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop", bio: "Ketaqwaan & Budi Pekerti • Penyelenggara kegiatan keagamaan & karakter." },
+            { name: "Kevin Sanjaya", role: "Koordinator Sekbid 2", dept: "sekbid2", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop", bio: "Kebangsaan & Bela Negara • Mengomandoi upacara & aksi bakti sosial." },
+            { name: "Jason Edward", role: "Koordinator Sekbid 3", dept: "sekbid3", img: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=400&auto=format&fit=crop", bio: "Prestasi & Olahraga • Penanggung jawab Classmeeting & Tarakupang Sports." },
+            { name: "Vanessa Putri", role: "Koordinator Sekbid 4", dept: "sekbid4", img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop", bio: "Seni & Budaya • Mengelola pentas seni, Bulan Bahasa & kompetisi kreatif." },
+            { name: "Brandon Lee", role: "Koordinator Sekbid 5", dept: "sekbid5", img: "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?q=80&w=400&auto=format&fit=crop", bio: "Teknologi & Informasi • Pengelola media sosial, publikasi, & liputan event." }
+        ];
+
+        const eventsData = [
+            { title: "TARAKUPANG 2026", cat: "akan-datang", date: "15 - 20 November 2026", desc: "Cup tahunan SMA Tarakanita 2 mencakup Basket, Futsal, Modern Dance, dan E-Sports.", icon: "fa-trophy" },
+            { title: "Bulan Bahasa & Kebudayaan", cat: "akan-datang", date: "28 Oktober 2026", desc: "Lomba debat, cipta puisi, dan parade kostum adat nusantara.", icon: "fa-book-open" },
+            { title: "LDKS & Retret OSIS", cat: "berlangsung", date: "26 - 28 Oktober 2026", desc: "Latihan Dasar Kepemimpinan Siswa dan retret penguatan spiritual pimpinan.", icon: "fa-campground" },
+            { title: "Bakti Sosial & Donor Darah", cat: "selesai", date: "12 September 2026", desc: "Aksi kemanusiaan belarasa (Compassion) bagi masyarakat sekitar Pluit.", icon: "fa-hand-holding-heart" },
+            { title: "Classmeeting Semester 1", cat: "selesai", date: "18 - 21 Juni 2026", desc: "Kompetisi antar kelas penuh kebersamaan setelah Penilaian Akhir Semester.", icon: "fa-volleyball" }
+        ];
+
+        const galleryData = [
+            { title: "Misa Pembukaan Tahun Ajaran", tag: "Kerohanian", img: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=600&auto=format&fit=crop" },
+            { title: "Latihan Marching Band", tag: "Seni", img: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=600&auto=format&fit=crop" },
+            { title: "Turnamen Basket Antar Kelas", tag: "Olahraga", img: "https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=600&auto=format&fit=crop" },
+            { title: "Pentas Seni & Budaya", tag: "Kreativitas", img: "https://images.unsplash.com/photo-1469488865564-c2de10f69f96?q=80&w=600&auto=format&fit=crop" }
+        ];
+
+        const announcementsData = [
+            { tag: "Penting", date: "27 Oktober 2026", title: "Pendaftaran Pameran Ekstrakurikuler 2026 Resmi Dibuka", desc: "Bagi siswa kelas X yang belum memilih ekstrakurikuler wajib dan pilihan, pendaftaran dibuka hingga Jumat ini melalui portal siswa." },
+            { tag: "Info Event", date: "24 Oktober 2026", title: "Open Registration Participant Tarakupang Cup 2026", desc: "Undangan resmi telah dikirimkan ke 40 sekolah di DKI Jakarta. Daftarkan tim terbaik sekolahmu!" },
+            { tag: "Pengumuman", date: "20 Oktober 2026", title: "Hasil Pengumpulan Kotak Aspirasi Bulan September", desc: "Saran mengenai fasilitas kantin dan wifi sekolah telah ditindaklanjuti bersama pihak pimpinan sekolah." }
+        ];
+
+        // Render Functions
+        function renderPengurus(filter = 'all') {
+            const grid = document.getElementById('pengurus-grid');
+            grid.innerHTML = '';
+            
+            const filtered = filter === 'all' ? pengurusData : pengurusData.filter(p => p.dept === filter);
+
+            filtered.forEach(p => {
+                grid.innerHTML += `
+                    <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 hover:shadow-lg transition-all text-center group">
+                        <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 border-2 border-taraGold/60 shadow-md group-hover:scale-105 transition-transform">
+                            <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-[11px] font-bold text-taraGold uppercase tracking-wider block mb-1">${p.role}</span>
+                        <h4 class="text-base font-bold text-taraNavy mb-2">${p.name}</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">${p.bio}</p>
+                    </div>
+                `;
+            });
+        }
+
+        function filterDepartment(dept) {
+            document.querySelectorAll('.dept-btn').forEach(btn => {
+                btn.classList.remove('bg-taraNavy', 'text-white');
+                btn.classList.add('bg-slate-100', 'text-slate-700');
+            });
+            event.target.classList.remove('bg-slate-100', 'text-slate-700');
+            event.target.classList.add('bg-taraNavy', 'text-white');
+            renderPengurus(dept);
+        }
+
+        function renderEvents(category = 'akan-datang') {
+            const grid = document.getElementById('event-grid');
+            grid.innerHTML = '';
+            
+            const filtered = eventsData.filter(e => e.cat === category);
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<p class="col-span-full text-center text-slate-400 py-8">Belum ada agenda pada kategori ini.</p>`;
+                return;
+            }
+
+            filtered.forEach(e => {
+                grid.innerHTML += `
+                    <div class="bg-slate-800/80 rounded-2xl p-6 border border-slate-700 hover:border-taraGold/50 transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-xs text-taraGold font-semibold flex items-center gap-1.5">
+                                    <i class="fa-solid fa-calendar-days"></i> ${e.date}
+                                </span>
+                                <div class="w-9 h-9 rounded-xl bg-slate-700 text-taraGold flex items-center justify-center">
+                                    <i class="fa-solid ${e.icon}"></i>
+                                </div>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-2">${e.title}</h4>
+                            <p class="text-xs text-slate-300 leading-relaxed">${e.desc}</p>
+                        </div>
+                        <button onclick="alert('Informasi pendaftaran dan detail ${e.title} dapat diakses melalui Sekretariat OSIS.')" class="mt-6 w-full py-2.5 bg-slate-700 hover:bg-taraGold hover:text-taraNavy text-xs font-bold rounded-xl text-slate-200 transition-colors">
+                            Detail & Registrasi
+                        </button>
+                    </div>
+                `;
+            });
+        }
+
+        function filterEvents(cat) {
+            document.querySelectorAll('.event-tab').forEach(tab => {
+                tab.classList.remove('bg-taraGold', 'text-taraNavy', 'active-tab');
+                tab.classList.add('text-slate-400');
+            });
+            event.target.classList.add('bg-taraGold', 'text-taraNavy', 'active-tab');
+            event.target.classList.remove('text-slate-400');
+            renderEvents(cat);
+        }
+
+        function renderGallery() {
+            const grid = document.getElementById('gallery-grid');
+            grid.innerHTML = '';
+            galleryData.forEach(g => {
+                grid.innerHTML += `
+                    <div class="group relative rounded-2xl overflow-hidden shadow-md h-60 cursor-pointer">
+                        <img src="${g.img}" alt="${g.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-taraNavy-900/90 via-taraNavy-900/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <span class="text-[10px] bg-taraGold text-taraNavy font-bold px-2 py-0.5 rounded-full mb-1 inline-block">${g.tag}</span>
+                            <h4 class="text-sm font-bold leading-snug">${g.title}</h4>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function renderAnnouncements() {
+            const container = document.getElementById('announcements-container');
+            container.innerHTML = '';
+            announcementsData.forEach(a => {
+                container.innerHTML += `
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-taraNavy/30 transition-all">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-taraNavy bg-taraNavy/10 px-2.5 py-0.5 rounded-md">${a.tag}</span>
+                            <span class="text-xs text-slate-400"><i class="fa-regular fa-clock mr-1"></i>${a.date}</span>
+                        </div>
+                        <h4 class="text-base font-bold text-taraNavy mb-1 hover:text-taraGold transition-colors cursor-pointer">${a.title}</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">${a.desc}</p>
+                    </div>
+                `;
+            });
+        }
+
+        // Countdown Timer Logic
+        function startCountdown() {
+            let targetDate = new Date().getTime() + (14 * 24 * 60 * 60 * 1000); // 14 days ahead
+            setInterval(() => {
+                let now = new Date().getTime();
+                let distance = targetDate - now;
+
+                if (distance < 0) return;
+
+                let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('cd-days').innerText = String(days).padStart(2, '0');
+                document.getElementById('cd-hours').innerText = String(hours).padStart(2, '0');
+                document.getElementById('cd-mins').innerText = String(minutes).padStart(2, '0');
+                document.getElementById('cd-secs').innerText = String(seconds).padStart(2, '0');
+            }, 1000);
+        }
+
+        // Form Aspirasi Submission
+        function submitAspirasi(e) {
+            e.preventDefault();
+            document.getElementById('aspirasi-form').reset();
+            const successBox = document.getElementById('asp-success');
+            successBox.classList.remove('hidden');
+            setTimeout(() => {
+                successBox.classList.add('hidden');
+            }, 5000);
+        }
+
+        // Cc5+ Modal Logic
+        function openCc5Modal(title, desc, icon) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-desc').innerText = desc;
+            document.getElementById('modal-icon').innerHTML = `<i class="fa-solid ${icon}"></i>`;
+            document.getElementById('cc5-modal').classList.remove('hidden');
+        }
+
+        function closeCc5Modal() {
+            document.getElementById('cc5-modal').classList.add('hidden');
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Search Modal Logic
+        function toggleSearchModal() {
+            const modal = document.getElementById('search-modal');
+            modal.classList.toggle('hidden');
+            if (!modal.classList.contains('hidden')) {
+                document.getElementById('search-input').focus();
+            }
+        }
+
+        function handleSearch() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const results = document.getElementById('search-results');
+            
+            if (!query) {
+                results.innerHTML = `<p class="text-center py-6 text-slate-400">Ketik kata kunci untuk mencari informasi...</p>`;
+                return;
+            }
+
+            const matchedEvents = eventsData.filter(e => e.title.toLowerCase().includes(query) || e.desc.toLowerCase().includes(query));
+            const matchedPengurus = pengurusData.filter(p => p.name.toLowerCase().includes(query) || p.role.toLowerCase().includes(query));
+
+            let html = '';
+            if (matchedEvents.length > 0) {
+                html += `<div class="font-bold text-taraNavy border-b pb-1 mb-2">Program Kerja & Event</div>`;
+                matchedEvents.forEach(e => {
+                    html += `<div class="p-2 bg-slate-50 rounded hover:bg-slate-100 font-medium">${e.title} (${e.date})</div>`;
+                });
+            }
+
+            if (matchedPengurus.length > 0) {
+                html += `<div class="font-bold text-taraNavy border-b pb-1 my-2">Pengurus OSIS</div>`;
+                matchedPengurus.forEach(p => {
+                    html += `<div class="p-2 bg-slate-50 rounded hover:bg-slate-100 font-medium">${p.name} - ${p.role}</div>`;
+                });
+            }
+
+            results.innerHTML = html || `<p class="text-center py-6 text-slate-400">Tidak ada hasil ditemukan untuk "${query}"</p>`;
+        }
+
+        // Initialize App on Page Load
+        window.onload = function() {
+            renderPengurus();
+            renderEvents();
+            renderGallery();
+            renderAnnouncements();
+            startCountdown();
+        }
+    </script>
+</body>
+</html>
