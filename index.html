@@ -596,6 +596,7 @@
     </div>
 
     <!-- JAVASCRIPT LOGIC -->
+    <script src="/js/events-data.js"></script>
     <script>
         // Data Store for Interactive Features
         const pengurusData = [
@@ -617,13 +618,7 @@
             { name: "Matthew Sebastian", role: "Koordinator Sekbid 9", dept: "sekbid9", img: "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?q=80&w=400&auto=format&fit=crop", bio: "Teknologi & Informasi • Pengelola media sosial, publikasi, & liputan event." }
         ];
 
-        const eventsData = [
-            { title: "TARAKUPANG 2026", cat: "akan-datang", date: "15 - 20 November 2026", desc: "Cup tahunan SMA Tarakanita 2 mencakup Basket, Futsal, Modern Dance, dan E-Sports.", icon: "fa-trophy" },
-            { title: "Bulan Bahasa & Kebudayaan", cat: "akan-datang", date: "28 Oktober 2026", desc: "Lomba debat, cipta puisi, dan parade kostum adat nusantara.", icon: "fa-book-open" },
-            { title: "LDKS & Retret OSIS", cat: "berlangsung", date: "26 - 28 Oktober 2026", desc: "Latihan Dasar Kepemimpinan Siswa dan retret penguatan spiritual pimpinan.", icon: "fa-campground" },
-            { title: "Bakti Sosial & Donor Darah", cat: "selesai", date: "12 September 2026", desc: "Aksi kemanusiaan belarasa (Compassion) bagi masyarakat sekitar Pluit.", icon: "fa-hand-holding-heart" },
-            { title: "Classmeeting Semester 1", cat: "selesai", date: "18 - 21 Juni 2026", desc: "Kompetisi antar kelas penuh kebersamaan setelah Penilaian Akhir Semester.", icon: "fa-volleyball" }
-        ];
+        // eventsData dimuat dari js/events-data.js
 
         const galleryData = [
             { title: "Misa Pembukaan Tahun Ajaran", tag: "Kerohanian", img: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=600&auto=format&fit=crop" },
@@ -695,9 +690,9 @@
                             <h4 class="text-xl font-bold text-white mb-2">${e.title}</h4>
                             <p class="text-xs text-slate-300 leading-relaxed">${e.desc}</p>
                         </div>
-                        <button onclick="alert('Informasi pendaftaran dan detail ${e.title} dapat diakses melalui Sekretariat OSIS.')" class="mt-6 w-full py-2.5 bg-slate-700 hover:bg-taraGold hover:text-taraNavy text-xs font-bold rounded-xl text-slate-200 transition-colors">
+                        <a href="/detail.html?id=${e.id}" class="mt-6 w-full py-2.5 bg-slate-700 hover:bg-taraGold hover:text-taraNavy text-xs font-bold rounded-xl text-slate-200 transition-colors text-center block">
                             Detail & Registrasi
-                        </button>
+                        </a>
                     </div>
                 `;
             });
@@ -822,7 +817,7 @@
             if (matchedEvents.length > 0) {
                 html += `<div class="font-bold text-taraNavy border-b pb-1 mb-2">Program Kerja & Event</div>`;
                 matchedEvents.forEach(e => {
-                    html += `<div class="p-2 bg-slate-50 rounded hover:bg-slate-100 font-medium">${e.title} (${e.date})</div>`;
+                    html += `<a href="/detail.html?id=${e.id}" class="block p-2 bg-slate-50 rounded hover:bg-slate-100 font-medium">${e.title} (${e.date})</a>`;
                 });
             }
 
