@@ -313,74 +313,12 @@
         </div>
     </section>
 
-    <!-- 3. PENGURUS OSIS SPOTLIGHT -->
-    <section id="pengurus" class="py-20 bg-white">
-        <div class="container mx-auto px-4 lg:px-8 max-w-7xl">
-            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
-                <span class="text-taraGold font-bold text-xs sm:text-sm tracking-widest uppercase bg-taraNavy/5 px-3 py-1 rounded-full border border-taraNavy/10">Kabinet Kerja</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-taraNavy">Pengurus OSIS 2026/2027</h2>
-                <p class="text-slate-600 text-sm sm:text-base">Kenali jajaran pimpinan dan ketua seksi bidang yang siap melayani dan berkarya bersama seluruh siswa SMA Tarakanita 2.</p>
-            </div>
-
-            <!-- Department Filters -->
-            <div class="flex flex-wrap justify-center gap-2 mb-10 text-xs sm:text-sm font-medium">
-                <button onclick="filterDepartment('all')" class="dept-btn active px-4 py-2 rounded-xl bg-taraNavy text-white shadow-sm transition-all">Semua Sekbid</button>
-                <button onclick="filterDepartment('bph')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">BPH Core</button>
-                <button onclick="filterDepartment('sekbid1')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 1 (PDOK)</button>
-                <button onclick="filterDepartment('sekbid2')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 2 (Olahraga)</button>
-                <button onclick="filterDepartment('sekbid3')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 3 (Seni)</button>
-                <button onclick="filterDepartment('sekbid4')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 4 (Bela Negara)</button>
-                <button onclick="filterDepartment('sekbid5')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 5 (HUMAS)</button>
-                <button onclick="filterDepartment('sekbid6')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 6 (Rohani)</button>
-                <button onclick="filterDepartment('sekbid7')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 7 (Multimedia)</button>
-                <button onclick="filterDepartment('sekbid8')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 8 (LINGESTAN)</button>
-                <button onclick="filterDepartment('sekbid9')" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 9 (Wirausaha)</button>
-            </div>
-
-            <!-- Pengurus Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="pengurus-grid">
-                <!-- Profile Cards dynamically managed via JS or template -->
-            </div>
-        </div>
-    </section>
-
+    
     <!-- 4. FEATURED EVENTS & PROGRAM KERJA -->
     <section id="program" class="py-20 bg-slate-900 text-white relative">
         <div class="container mx-auto px-4 lg:px-8 max-w-7xl relative z-10">
             
-            <!-- Countdown Banner for Flagship Event -->
-            <div class="bg-gradient-to-r from-taraNavy via-taraNavy-800 to-indigo-950 p-6 sm:p-10 rounded-3xl border border-taraGold/30 shadow-2xl mb-16 flex flex-col lg:flex-row items-center justify-between gap-8">
-                <div class="space-y-3 text-center lg:text-left">
-                    <span class="bg-taraGold/20 text-taraGold px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-taraGold/30">
-                        <i class="fa-solid fa-fire text-amber-400"></i> Event Utama Terdekat
-                    </span>
-                    <h3 class="text-2xl sm:text-4xl font-extrabold text-white">TARAKUPANG 2026 (Tarakanita Cup)</h3>
-                    <p class="text-slate-300 text-sm max-w-xl">Kompetisi Seni, Olahraga, & E-Sports antar SMA se-Jabodetabek. Persiapkan tim sekolahmu dan jadilah juara!</p>
-                </div>
-
-                <!-- Live Countdown -->
-                <div class="flex items-center gap-3 sm:gap-4 text-center">
-                    <div class="bg-white/10 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-white/10 min-w-[65px] sm:min-w-[80px]">
-                        <span class="block text-2xl sm:text-4xl font-black text-taraGold" id="cd-days">14</span>
-                        <span class="text-[10px] sm:text-xs text-slate-300 uppercase font-semibold">Hari</span>
-                    </div>
-                    <span class="text-xl font-bold text-taraGold">:</span>
-                    <div class="bg-white/10 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-white/10 min-w-[65px] sm:min-w-[80px]">
-                        <span class="block text-2xl sm:text-4xl font-black text-taraGold" id="cd-hours">08</span>
-                        <span class="text-[10px] sm:text-xs text-slate-300 uppercase font-semibold">Jam</span>
-                    </div>
-                    <span class="text-xl font-bold text-taraGold">:</span>
-                    <div class="bg-white/10 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-white/10 min-w-[65px] sm:min-w-[80px]">
-                        <span class="block text-2xl sm:text-4xl font-black text-taraGold" id="cd-mins">42</span>
-                        <span class="text-[10px] sm:text-xs text-slate-300 uppercase font-semibold">Menit</span>
-                    </div>
-                    <span class="text-xl font-bold text-taraGold">:</span>
-                    <div class="bg-white/10 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-white/10 min-w-[65px] sm:min-w-[80px]">
-                        <span class="block text-2xl sm:text-4xl font-black text-taraGold" id="cd-secs">15</span>
-                        <span class="text-[10px] sm:text-xs text-slate-300 uppercase font-semibold">Detik</span>
-                    </div>
-                </div>
-            </div>
+            
 
             <!-- Program Kerja Filter & Showcase Header -->
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
