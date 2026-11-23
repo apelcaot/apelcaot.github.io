@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seluruh Pengurus - OSIS SMA Tarakanita 2 Jakarta</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/downloads/tarakanitalogo.png">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Custom Color Configuration (Sama Persis dengan Homepage) -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        taraNavy: {
+                            DEFAULT: '#254A80',
+                            50: '#F0F4F9',
+                            100: '#DCE4F0',
+                            800: '#152B4B',
+                            900: '#0F1E35',
+                        },
+                        taraGold: {
+                            DEFAULT: '#D4AF37',
+                            hover: '#C09B27',
+                            light: '#FFF9E6',
+                            accent: '#F2A900'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom scrollbar & visual aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1B365D;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800 font-sans antialiased flex flex-col min-h-screen selection:bg-taraGold selection:text-taraNavy">
+
+    <!-- Top Info Bar -->
+    <div class="bg-taraNavy-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-700/50">
+        <div class="max-w-7xl flex flex-col sm:flex-row justify-between items-center gap-2 container mx-auto">
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-taraGold"></i> SMA Tarakanita 2 Jakarta</span>
+                <span class="hidden md:flex items-center gap-1.5"><i class="fa-solid fa-envelope text-taraGold"></i> osis@smatarakanita2.sch.id</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="font-semibold text-taraGold">Cc5+:</span>
+                <span class="text-[11px] tracking-wide text-slate-300">Compassion • Celebration • Competence • Conviction • Creativity • Community</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header (Sama dengan Homepage, Tanpa Tombol Kembali ke Beranda) -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-4 lg:px-8 py-3 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="index.html#beranda" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl flex items-center justify-center text-taraGold text-xl font-bold group-hover:scale-105 transition-transform duration-300">
+                    <img src="downloads/tarakanitalogo.png" alt="Tarakanita" onerror="this.style.display='none'"> 
+                </div>
+                <div>
+                    <span class="block text-lg font-extrabold text-taraNavy leading-tight tracking-tight">OSIS TARAKANITA 2</span>
+                    <span class="block text-xs font-semibold text-taraGold tracking-widest uppercase">SMA Tarakanita 2 Jakarta</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-700">
+                <a href="index.html#beranda" class="hover:text-taraNavy transition-colors py-1 border-b-2 border-transparent hover:border-taraGold">Beranda</a>
+                <a href="index.html#nilai-visi" class="hover:text-taraNavy transition-colors py-1 border-b-2 border-transparent hover:border-taraGold">Cc5+ &amp; Visi</a> 
+                <a href="pengurus.html" class="text-taraNavy font-semibold py-1 border-b-2 border-taraGold">Pengurus OSIS</a>
+                <a href="program.html" class="hover:text-taraNavy transition-colors py-1 border-b-2 border-transparent hover:border-taraGold">Program Kerja</a>
+                <a href="galeri.html" class="hover:text-taraNavy transition-colors py-1 border-b-2 border-transparent hover:border-taraGold">Galeri</a> 
+                <a href="index.html#aspirasi" class="hover:text-taraNavy transition-colors py-1 border-b-2 border-transparent hover:border-taraGold">Aspirasi</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="hidden sm:flex items-center gap-3">
+                <button onclick="toggleSearchModal()" class="p-2.5 rounded-full text-slate-600 hover:text-taraNavy hover:bg-slate-100 transition-colors" title="Cari Informasi">
+                    <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                </button>
+                <a href="#kontak" class="bg-taraNavy hover:bg-taraNavy-800 text-white text-xs md:text-sm font-semibold px-4 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center gap-2 border border-taraGold/30">
+                    <i class="fa-solid fa-paper-plane text-taraGold"></i> Hubungi OSIS
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Nav Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-3 transition-all duration-300">
+            <a href="index.html#beranda" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-taraNavy font-medium border-b border-slate-100">Beranda</a>
+            <a href="index.html#nilai-visi" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-taraNavy font-medium border-b border-slate-100">Nilai Cc5+ &amp; Visi Misi</a>
+            <a href="pengurus.html" onclick="toggleMobileMenu()" class="block py-2 text-taraNavy font-bold border-b border-slate-100">Pengurus OSIS</a>
+            <a href="program.html" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-taraNavy font-medium border-b border-slate-100">Program Kerja &amp; Event</a>
+            <a href="galeri.html" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-taraNavy font-medium border-b border-slate-100">Galeri Kegiatan</a>
+            <a href="index.html#aspirasi" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-taraNavy font-medium border-b border-slate-100">Kotak Aspirasi</a>
+            <a href="#kontak" onclick="toggleMobileMenu()" class="block py-2 text-taraNavy font-bold">Kontak &amp; Lokasi</a>
+        </div>
+    </header>
+
+    <!-- Konten Utama Pengurus OSIS -->
+    <main class="py-16 bg-white flex-1">
+        <div class="container mx-auto px-4 lg:px-8 max-w-7xl">
+            <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+                <span class="text-taraGold font-bold text-xs sm:text-sm tracking-widest uppercase bg-taraNavy/5 px-3 py-1 rounded-full border border-taraNavy/10">Kabinet Kerja</span>
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-taraNavy">Seluruh Pengurus OSIS 2026/2027</h1>
+                <p class="text-slate-600 text-sm sm:text-base">Jajaran pimpinan dan seluruh koordinator seksi bidang yang siap melayani dan berkarya bersama siswa SMA Tarakanita 2.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-2 mb-10 text-xs sm:text-sm font-medium">
+                <button data-dept="all" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Semua Sekbid</button>
+                <button data-dept="bph" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">BPH Core</button>
+                <button data-dept="sekbid1" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 1 (PDOK)</button>
+                <button data-dept="sekbid2" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 2 (Olahraga)</button>
+                <button data-dept="sekbid3" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 3 (Seni)</button>
+                <button data-dept="sekbid4" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 4 (Bela Negara)</button>
+                <button data-dept="sekbid5" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 5 (HUMAS)</button>
+                <button data-dept="sekbid6" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 6 (Rohani)</button>
+                <button data-dept="sekbid7" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 7 (Multimedia)</button>
+                <button data-dept="sekbid8" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 8 (LINGESTAN)</button>
+                <button data-dept="sekbid9" class="dept-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">Sekbid 9 (Wirausaha)</button>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4" id="pengurus-grid"></div>
+        </div>
+    </main>
+
+    <!-- FOOTER & KONTAK (Sama Persis dengan Homepage) -->
+    <footer id="kontak" class="bg-gradient-to-b from-[#254A80] to-[#172E52] text-white border-t border-white/10 mt-auto">
+        <div class="container mx-auto px-4 lg:px-8 py-16 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                
+                <!-- Col 1: About OSIS -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-taraGold text-xl font-bold">
+                            <img src="downloads/tarakanitalogo.png" alt="Tarakanita" onerror="this.style.display='none'"> 
+                        </div>
+                        <span class="text-lg font-bold tracking-tight">OSIS SMA Tarakanita 2</span>
+                    </div>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                        Organisasi Siswa Intra Sekolah SMA Tarakanita 2 Pluit, Jakarta Utara. Berkomitmen membentuk pemimpin muda berkarakter Cc5+.
+                    </p>
+                    <!-- Social Links -->
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="https://instagram.com/osis_smatarki2?rpxt=MTlkdXFyY2p4azZ3dA==" target="_blank" class="w-9 h-9 rounded-full bg-white/10 hover:bg-taraGold hover:text-taraNavy flex items-center justify-center text-slate-300 transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://tiktok.com" target="_blank" class="w-9 h-9 rounded-full bg-white/10 hover:bg-taraGold hover:text-taraNavy flex items-center justify-center text-slate-300 transition-colors">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" class="w-9 h-9 rounded-full bg-white/10 hover:bg-taraGold hover:text-taraNavy flex items-center justify-center text-slate-300 transition-colors">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigasi Cepat -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-taraGold mb-4">Navigasi Cepat</h4>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-300">
+                        <li><a href="index.html#beranda" class="hover:text-taraGold transition-colors">Beranda Utama</a></li>
+                        <li><a href="index.html#nilai-visi" class="hover:text-taraGold transition-colors">Nilai Cc5+ &amp; Visi Misi</a></li>
+                        <li><a href="pengurus.html" class="hover:text-taraGold transition-colors">Kabinet Pengurus</a></li>
+                        <li><a href="program.html" class="hover:text-taraGold transition-colors">Program Kerja &amp; Event</a></li>
+                        <li><a href="galeri.html" class="hover:text-taraGold transition-colors">Galeri Dokumentasi</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Sekretariat OSIS -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-taraGold mb-4">Sekretariat</h4>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed space-y-2">
+                        <span class="block"><i class="fa-solid fa-location-dot text-taraGold mr-1.5"></i> Jl. Pluit Permai No.1, Pluit, Kec. Penjaringan, Jakarta Utara, DKI Jakarta 14450</span>
+                        <span class="block"><i class="fa-solid fa-envelope text-taraGold mr-1.5"></i> osis@smatarakanita2.sch.id</span>
+                        <span class="block"><i class="fa-brands fa-whatsapp text-taraGold mr-1.5"></i> +62 812-3456-7890 (Humas)</span>
+                    </p>
+                </div>
+
+                <!-- Col 4: Tagline -->
+                <div>
+                    <div class="inline-block bg-white/5 border border-white/10 p-3 rounded-xl text-xs text-slate-300">
+                        <span class="font-semibold text-taraGold block mb-1">Tagline Tarakanita:</span>
+                        "Cerdas, Berintegritas, Memimpin dengan Kasih"
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-slate-800 mt-12 pt-6 text-center text-xs text-slate-400 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>&copy; <span id="yr"></span> OSIS SMA Tarakanita 2 Jakarta. Hak Cipta Dilindungi.</p>
+                <p class="text-slate-400">Dirancang dengan Kebanggaraan &amp; Dijiwai Semangat Cc5+</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL: Search Popup -->
+    <div id="search-modal" class="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-sm hidden flex items-start justify-center pt-20 px-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full p-4 sm:p-6 space-y-4 shadow-2xl relative">
+            <div class="flex items-center gap-3 border-b border-slate-200 pb-3">
+                <i class="fa-solid fa-magnifying-glass text-slate-400 text-lg"></i>
+                <input type="text" id="search-input" onkeyup="handleSearch()" placeholder="Cari program kerja, pengurus, atau pengumuman..." class="w-full text-base focus:outline-none">
+                <button onclick="toggleSearchModal()" class="text-slate-400 hover:text-slate-600 p-1">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div id="search-results" class="max-h-80 overflow-y-auto space-y-2 text-sm text-slate-600">
+                <p class="text-center py-6 text-slate-400">Ketik kata kunci untuk mencari informasi...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script src="/js/events-data.js"></script>
+    <script src="js/pengurus-data.js"></script>
+    <script src="js/galeri-data.js"></script>
+    <script>
+        document.getElementById('yr').textContent = new Date().getFullYear();
+
+        function render(filter) {
+            const grid = document.getElementById('pengurus-grid');
+            const list = filter === 'all' ? pengurusData : pengurusData.filter(p => p.dept === filter);
+            grid.innerHTML = list.map(p => `
+                <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 hover:shadow-lg transition-all text-center group">
+                    <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 border-2 border-taraGold/60 shadow-md group-hover:scale-105 transition-transform">
+                        <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-[11px] font-bold text-taraGold uppercase tracking-wider block mb-1">${p.role}</span>
+                    <h4 class="text-base font-bold text-taraNavy mb-2">${p.name}</h4>
+                </div>`).join('');
+            document.querySelectorAll('.dept-btn').forEach(b => {
+                const on = b.dataset.dept === filter;
+                b.classList.toggle('bg-taraNavy', on);
+                b.classList.toggle('text-white', on);
+                b.classList.toggle('bg-slate-100', !on);
+                b.classList.toggle('text-slate-700', !on);
+            });
+        }
+        document.querySelectorAll('.dept-btn').forEach(b => b.addEventListener('click', () => render(b.dataset.dept)));
+        const d = new URLSearchParams(location.search).get('dept');
+        render(d && pengurusData.some(p => p.dept === d) ? d : 'all');
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Search Modal Logic
+        function toggleSearchModal() {
+            const modal = document.getElementById('search-modal');
+            modal.classList.toggle('hidden');
+            if (!modal.classList.contains('hidden')) {
+                document.getElementById('search-input').focus();
+            }
+        }
+
+        function handleSearch() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const results = document.getElementById('search-results');
+            
+            if (!query) {
+                results.innerHTML = `<p class="text-center py-6 text-slate-400">Ketik kata kunci untuk mencari informasi...</p>`;
+                return;
+            }
+
+            const matchedEvents = (typeof eventsData !== 'undefined' ? eventsData : []).filter(e => e.title.toLowerCase().includes(query) || e.desc.toLowerCase().includes(query));
+            const matchedPengurus = (typeof pengurusData !== 'undefined' ? pengurusData : []).filter(p => p.name.toLowerCase().includes(query) || p.role.toLowerCase().includes(query));
+
+            let html = '';
+            if (matchedEvents.length > 0) {
+                html += `<div class="font-bold text-taraNavy border-b pb-1 mb-2">Program Kerja &amp; Event</div>`;
+                matchedEvents.forEach(e => {
+                    html += `<a href="/detail.html?id=${e.id}" class="block p-2 bg-slate-50 rounded hover:bg-slate-100 font-medium">${e.title} (${e.date})</a>`;
+                });
+            }
+
+            if (matchedPengurus.length > 0) {
+                html += `<div class="font-bold text-taraNavy border-b pb-1 my-2">Pengurus OSIS</div>`;
+                matchedPengurus.forEach(p => {
+                    html += `<div class="p-2 bg-slate-50 rounded hover:bg-slate-100 font-medium">${p.name} - ${p.role}</div>`;
+                });
+            }
+
+            results.innerHTML = html || `<p class="text-center py-6 text-slate-400">Tidak ada hasil ditemukan untuk "${query}"</p>`;
+        }
+    </script>
+</body>
+</html>

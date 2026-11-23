@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baca Artikel - OSIS SMA Tarakanita 2 Jakarta</title>
+    <link rel="icon" type="image/png" href="downloads/tarakanitalogo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        taraNavy: { DEFAULT: '#254A80', 50: '#F0F4F9', 100: '#DCE4F0', 800: '#152B4B', 900: '#0F1E35' },
+                        taraGold: { DEFAULT: '#D4AF37', hover: '#C09B27', light: '#FFF9E6', accent: '#F2A900' }
+                    },
+                    fontFamily: { sans: ['Poppins', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Styling tipografi isi artikel */
+        .article-body p { margin-bottom: 1.15rem; line-height: 1.85; color: #334155; }
+        .article-body h3 { font-size: 1.25rem; font-weight: 700; color: #254A80; margin-top: 1.75rem; margin-bottom: 0.65rem; }
+        .article-body ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.25rem; color: #334155; }
+        .article-body li { margin-bottom: 0.5rem; line-height: 1.75; }
+        .article-body blockquote { background: #FFF9E6; border-left: 4px solid #D4AF37; padding: 1rem 1.25rem; border-radius: 0 0.75rem 0.75rem 0; margin: 1.5rem 0; color: #0F1E35; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="container mx-auto px-4 lg:px-8 py-3 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="downloads/tarakanitalogo.png" alt="Tarakanita" class="w-10 h-10 object-contain" onerror="this.style.display='none'">
+                <div>
+                    <span class="block text-base sm:text-lg font-extrabold text-taraNavy leading-tight">OSIS TARAKANITA 2</span>
+                    <span class="block text-[11px] font-semibold text-taraGold tracking-widest uppercase">Ruang Literasi & Akademik</span>
+                </div>
+            </a>
+            <a href="literasi.html" class="inline-flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-taraNavy text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl transition-all">
+                <i class="fa-solid fa-arrow-left"></i> Semua Artikel
+            </a>
+        </div>
+    </header>
+
+    <!-- Konten Detail Artikel -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-10 max-w-4xl flex-grow">
+        
+        <!-- Breadcrumb -->
+        <nav class="text-xs text-slate-500 mb-6 flex items-center gap-2">
+            <a href="index.html" class="hover:text-taraNavy">Beranda</a>
+            <span>/</span>
+            <a href="literasi.html" class="hover:text-taraNavy">Artikel & Tips</a>
+            <span>/</span>
+            <span id="bread-title" class="text-taraNavy font-semibold truncate max-w-[200px] sm:max-w-md">Detail</span>
+        </nav>
+
+        <!-- Artikel Card Utama -->
+        <article class="bg-white rounded-3xl shadow-sm border border-slate-200/80 overflow-hidden">
+            
+            <!-- Header Artikel -->
+            <div class="p-6 sm:p-10 border-b border-slate-100 space-y-4">
+                <div class="flex flex-wrap items-center gap-3">
+                    <span id="detail-badge" class="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-taraNavy text-taraGold">
+                        Kategori
+                    </span>
+                    <span class="text-xs text-slate-500 flex items-center gap-1.5">
+                        <i class="fa-regular fa-calendar text-taraGold"></i> <span id="detail-date"></span>
+                    </span>
+                    <span class="text-slate-300">•</span>
+                    <span class="text-xs text-slate-500 flex items-center gap-1.5">
+                        <i class="fa-regular fa-clock text-taraGold"></i> <span id="detail-readtime"></span>
+                    </span>
+                </div>
+
+                <h1 id="detail-title" class="text-2xl sm:text-4xl font-extrabold text-taraNavy leading-tight">
+                    Memuat Judul...
+                </h1>
+
+                <p id="detail-caption" class="text-slate-500 text-sm sm:text-base italic border-l-2 border-taraGold pl-3.5">
+                </p>
+
+                <div class="pt-2 flex items-center gap-2.5 text-xs text-slate-600 font-medium">
+                    <div class="w-8 h-8 rounded-full bg-taraNavy/10 text-taraNavy flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
+                    <span>Ditulis oleh <strong id="detail-author" class="text-taraNavy">OSIS Tarakanita 2</strong></span>
+                </div>
+            </div>
+
+            <!-- Isi Artikel Lengkap -->
+            <div id="detail-content" class="p-6 sm:p-10 article-body text-sm sm:text-base">
+                <!-- Isi HTML dari literasi-data.js -->
+            </div>
+
+            <!-- Section 1-3 Foto Dokumentasi -->
+            <div class="px-6 sm:px-10 pb-10 pt-4 border-t border-slate-100 bg-slate-50/50">
+                <div class="mb-5">
+                    <h2 class="text-lg font-bold text-taraNavy flex items-center gap-2">
+                        <i class="fa-solid fa-camera text-taraGold"></i> Dokumentasi Terkait
+                    </h2>
+                    <p class="text-xs text-slate-500">Klik foto untuk melihat ukuran penuh.</p>
+                </div>
+
+                <!-- Grid Foto (Otomatis menyesuaikan 1, 2, atau 3 foto) -->
+                <div id="detail-photos" class="grid gap-5"></div>
+            </div>
+
+        </article>
+
+        <!-- Navigasi Bawah -->
+        <div class="mt-8 flex justify-between items-center">
+            <a href="index.html#literasi" class="text-sm font-semibold text-slate-600 hover:text-taraNavy flex items-center gap-2">
+                <i class="fa-solid fa-house"></i> Beranda Utama
+            </a>
+            <a href="literasi.html" class="bg-taraNavy hover:bg-taraNavy-800 text-white text-sm font-semibold px-6 py-3 rounded-xl shadow transition-all">
+                Lihat Artikel & Tips Lainnya <i class="fa-solid fa-arrow-right ml-1.5"></i>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Modal Preview Foto -->
+    <div id="photo-modal" onclick="this.classList.add('hidden')" class="fixed inset-0 z-50 bg-black/90 hidden flex flex-col items-center justify-center p-4 cursor-zoom-out">
+        <img id="modal-photo-img" src="" alt="Preview" class="max-h-[80vh] max-w-full rounded-xl shadow-2xl object-contain">
+        <p id="modal-photo-caption" class="text-white text-sm mt-3 text-center max-w-2xl"></p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-taraNavy-900 text-slate-400 py-6 text-center text-xs border-t border-slate-800 mt-10">
+        <p>&copy; 2026 OSIS SMA Tarakanita 2 Jakarta. Hak Cipta Dilindungi.</p>
+    </footer>
+
+    <script src="js/literasi-data.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const articleId = params.get('id');
+        const article = literasiData.find(item => item.id === articleId) || literasiData[0];
+
+        document.title = `${article.title} - OSIS Tarakanita 2`;
+        document.getElementById('bread-title').innerText = article.title;
+        document.getElementById('detail-badge').innerText = article.badge;
+        document.getElementById('detail-badge').className = `px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${
+            article.category === 'artikel' ? 'bg-taraNavy text-taraGold' : 'bg-taraGold text-taraNavy'
+        }`;
+        document.getElementById('detail-date').innerText = article.date;
+        document.getElementById('detail-readtime').innerText = article.readTime;
+        document.getElementById('detail-title').innerText = article.title;
+        document.getElementById('detail-caption').innerText = article.caption;
+        document.getElementById('detail-author').innerText = article.author;
+        document.getElementById('detail-content').innerHTML = article.content;
+
+        // Render 1 - 3 Foto Dokumentasi
+        const photosContainer = document.getElementById('detail-photos');
+        const photos = (article.photos || []).slice(0, 3); // Maksimal 3 foto
+
+        if (photos.length === 1) {
+            photosContainer.classList.add('grid-cols-1');
+        } else if (photos.length === 2) {
+            photosContainer.classList.add('grid-cols-1', 'sm:grid-cols-2');
+        } else {
+            photosContainer.classList.add('grid-cols-1', 'sm:grid-cols-3');
+        }
+
+        photosContainer.innerHTML = photos.map(photo => `
+            <figure onclick="previewPhoto('${photo.url}', '${photo.caption.replace(/'/g, "\\'")}')" class="group bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm cursor-zoom-in">
+                <div class="aspect-[4/3] overflow-hidden bg-slate-200">
+                    <img src="${photo.url}" alt="${photo.caption}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <figcaption class="p-3 text-xs text-slate-600 leading-relaxed">
+                    ${photo.caption}
+                </figcaption>
+            </figure>
+        `).join('');
+
+        function previewPhoto(url, caption) {
+            document.getElementById('modal-photo-img').src = url;
+            document.getElementById('modal-photo-caption').innerText = caption;
+            document.getElementById('photo-modal').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>

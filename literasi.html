@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artikel & Tips Belajar - OSIS SMA Tarakanita 2 Jakarta</title>
+    <link rel="icon" type="image/png" href="downloads/tarakanitalogo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        taraNavy: { DEFAULT: '#254A80', 50: '#F0F4F9', 100: '#DCE4F0', 800: '#152B4B', 900: '#0F1E35' },
+                        taraGold: { DEFAULT: '#D4AF37', hover: '#C09B27', light: '#FFF9E6', accent: '#F2A900' }
+                    },
+                    fontFamily: { sans: ['Poppins', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="container mx-auto px-4 lg:px-8 py-3 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="downloads/tarakanitalogo.png" alt="Tarakanita" class="w-10 h-10 object-contain" onerror="this.style.display='none'">
+                <div>
+                    <span class="block text-base sm:text-lg font-extrabold text-taraNavy leading-tight">OSIS TARAKANITA 2</span>
+                    <span class="block text-[11px] font-semibold text-taraGold tracking-widest uppercase">Ruang Literasi & Akademik</span>
+                </div>
+            </a>
+            <a href="index.html#literasi" class="inline-flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-taraNavy text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl transition-all">
+                <i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda
+            </a>
+        </div>
+    </header>
+
+    <!-- Banner Judul -->
+    <section class="bg-taraNavy text-white py-14 px-4">
+        <div class="container mx-auto max-w-5xl text-center space-y-3">
+            <span class="inline-block px-3.5 py-1 rounded-full bg-taraGold/20 text-taraGold text-xs font-bold uppercase tracking-wider">
+                Kumpulan Bacaan Siswa
+            </span>
+            <h1 class="text-3xl sm:text-4xl font-extrabold">Artikel Bulanan & Tips Belajar Efektif</h1>
+            <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto">
+                Jelajahi seluruh publikasi artikel, ringkasan materi pendukung, dan strategi belajar efektif dari OSIS SMA Tarakanita 2 Jakarta.
+            </p>
+        </div>
+    </section>
+
+    <!-- Filter & Search Bar -->
+    <main class="container mx-auto px-4 lg:px-8 py-12 max-w-7xl flex-grow">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-10">
+            <!-- Kategori Filter -->
+            <div class="flex flex-wrap justify-center gap-2">
+                <button onclick="setFilter('all', this)" class="tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-taraNavy text-white shadow-sm transition-all">
+                    Semua (<span id="count-all">0</span>)
+                </button>
+                <button onclick="setFilter('artikel', this)" class="tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-taraNavy-50 transition-all">
+                    <i class="fa-solid fa-newspaper text-taraGold mr-1"></i> Artikel Bulanan
+                </button>
+                <button onclick="setFilter('tips', this)" class="tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-taraNavy-50 transition-all">
+                    <i class="fa-solid fa-lightbulb text-taraGold mr-1"></i> Tips & Tricks Belajar
+                </button>
+            </div>
+
+            <!-- Kotak Pencarian -->
+            <div class="relative w-full md:w-72">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                <input type="text" id="search-literasi" onkeyup="renderAllLiterasi()" placeholder="Cari judul atau topik..." class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:border-taraNavy">
+            </div>
+        </div>
+
+        <!-- Grid Seluruh Artikel -->
+        <div id="all-literasi-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-taraNavy-900 text-slate-400 py-6 text-center text-xs border-t border-slate-800">
+        <p>&copy; 2026 OSIS SMA Tarakanita 2 Jakarta. Hak Cipta Dilindungi.</p>
+    </footer>
+
+    <script src="js/literasi-data.js"></script>
+    <script>
+        let activeCategory = 'all';
+
+        document.getElementById('count-all').innerText = literasiData.length;
+
+        function setFilter(category, btn) {
+            activeCategory = category;
+            document.querySelectorAll('.tab-btn').forEach(b => {
+                b.classList.remove('bg-taraNavy', 'text-white', 'font-bold');
+                b.classList.add('bg-white', 'text-slate-600', 'font-semibold', 'border', 'border-slate-200');
+            });
+            btn.classList.remove('bg-white', 'text-slate-600', 'font-semibold', 'border', 'border-slate-200');
+            btn.classList.add('bg-taraNavy', 'text-white', 'font-bold');
+            renderAllLiterasi();
+        }
+
+        function renderAllLiterasi() {
+            const grid = document.getElementById('all-literasi-grid');
+            const keyword = document.getElementById('search-literasi').value.toLowerCase();
+
+            const filtered = literasiData.filter(item => {
+                const matchCat = activeCategory === 'all' || item.category === activeCategory;
+                const matchKey = item.title.toLowerCase().includes(keyword) || item.caption.toLowerCase().includes(keyword);
+                return matchCat && matchKey;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-16 text-slate-400">Tidak ada artikel atau tips yang sesuai dengan pencarianmu.</div>`;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(item => `
+                <a href="detail-literasi.html?id=${item.id}" class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col hover:-translate-y-1">
+                    <div class="relative h-52 overflow-hidden bg-slate-200">
+                        <img src="${item.coverImage}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold shadow-sm ${
+                            item.category === 'artikel' ? 'bg-taraNavy text-taraGold' : 'bg-taraGold text-taraNavy'
+                        }">
+                            ${item.badge}
+                        </span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                        <div class="space-y-2.5">
+                            <div class="text-xs text-slate-400 font-medium flex items-center gap-2">
+                                <span><i class="fa-regular fa-calendar text-taraGold mr-1"></i> ${item.date}</span>
+                                <span>•</span>
+                                <span>${item.readTime}</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-taraNavy group-hover:text-taraGold transition-colors leading-snug">
+                                ${item.title}
+                            </h3>
+                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed line-clamp-3">
+                                ${item.caption}
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold text-taraNavy group-hover:text-taraGold transition-colors">
+                            <span>Baca Selengkapnya</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
+            `).join('');
+        }
+
+        renderAllLiterasi();
+    </script>
+</body>
+</html>
