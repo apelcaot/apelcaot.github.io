@@ -1,27 +1,63 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baca Artikel - OSIS SMA Tarakanita 2 Jakarta</title>
-    <link rel="icon" type="image/png" href="downloads/tarakanitalogo.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://i.imgur.com/BFF558N.png">
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Custom Color Configuration (Sama Persis dengan Homepage) -->
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        taraNavy: { DEFAULT: '#254A80', 50: '#F0F4F9', 100: '#DCE4F0', 800: '#152B4B', 900: '#0F1E35' },
-                        taraGold: { DEFAULT: '#D4AF37', hover: '#C09B27', light: '#FFF9E6', accent: '#F2A900' }
+                        taraNavy: {
+                            DEFAULT: '#254A80',
+                            50: '#F0F4F9',
+                            100: '#DCE4F0',
+                            800: '#152B4B',
+                            900: '#0F1E35',
+                        },
+                        taraGold: {
+                            DEFAULT: '#D4AF37',
+                            hover: '#C09B27',
+                            light: '#FFF9E6',
+                            accent: '#F2A900'
+                        }
                     },
-                    fontFamily: { sans: ['Poppins', 'sans-serif'] }
+                    fontFamily: {
+                        sans: ['Poppins', 'Inter', 'sans-serif'],
+                    }
                 }
             }
         }
     </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Custom scrollbar & visual aesthetics (Sama dengan Homepage) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1B365D;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+
         /* Styling tipografi isi artikel */
         .article-body p { margin-bottom: 1.15rem; line-height: 1.85; color: #334155; }
         .article-body h3 { font-size: 1.25rem; font-weight: 700; color: #254A80; margin-top: 1.75rem; margin-bottom: 0.65rem; }
@@ -30,21 +66,41 @@
         .article-body blockquote { background: #FFF9E6; border-left: 4px solid #D4AF37; padding: 1rem 1.25rem; border-radius: 0 0.75rem 0.75rem 0; margin: 1.5rem 0; color: #0F1E35; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen selection:bg-taraGold selection:text-taraNavy">
 
-    <!-- Header -->
-    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <!-- Top Info Bar (Sama Persis dengan Homepage) -->
+    <div class="bg-taraNavy-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-700/50">
+        <div class="max-w-7xl flex flex-col sm:flex-row justify-between items-center gap-2 container mx-auto">
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-taraGold"></i> SMA Tarakanita 2 Jakarta</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="font-semibold text-taraGold">Cc5+:</span>
+                <span class="text-[11px] tracking-wide text-slate-300">Compassion • Celebration • Competence • Conviction • Creativity • Community</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header (Hanya tombol Semua Artikel di Navbar) -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300">
         <div class="container mx-auto px-4 lg:px-8 py-3 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-3">
-                <img src="downloads/tarakanitalogo.png" alt="Tarakanita" class="w-10 h-10 object-contain" onerror="this.style.display='none'">
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl flex items-center justify-center text-taraGold text-xl font-bold group-hover:scale-105 transition-transform duration-300">
+                    <img src="https://i.imgur.com/BFF558N.png" alt="Tarakanita" onerror="this.style.display='none'"> 
+                </div>
                 <div>
-                    <span class="block text-base sm:text-lg font-extrabold text-taraNavy leading-tight">OSIS TARAKANITA 2</span>
-                    <span class="block text-[11px] font-semibold text-taraGold tracking-widest uppercase">Ruang Literasi & Akademik</span>
+                    <span class="block text-lg font-extrabold text-taraNavy leading-tight tracking-tight">OSIS TARAKANITA 2</span>
+                    <span class="block text-xs font-semibold text-taraGold tracking-widest uppercase">SMA Tarakanita 2 Jakarta</span>
                 </div>
             </a>
-            <a href="literasi.html" class="inline-flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-taraNavy text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl transition-all">
-                <i class="fa-solid fa-arrow-left"></i> Semua Artikel
-            </a>
+
+            <!-- Hanya Tombol Semua Artikel -->
+            <nav class="flex items-center">
+                <a href="index.html#literasi" class="bg-taraNavy hover:bg-taraNavy-800 text-white text-xs sm:text-sm font-semibold px-4 sm:px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center gap-2 border border-taraGold/30">
+                    <i class="fa-solid fa-arrow-left text-taraGold"></i> Kembali ke Beranda
+                </a>
+            </nav>
         </div>
     </header>
 
@@ -53,11 +109,9 @@
         
         <!-- Breadcrumb -->
         <nav class="text-xs text-slate-500 mb-6 flex items-center gap-2">
-            <a href="index.html" class="hover:text-taraNavy">Beranda</a>
+            <a href="literasi.html" class="hover:text-taraNavy transition-colors">Artikel &amp; Tips</a>
             <span>/</span>
-            <a href="literasi.html" class="hover:text-taraNavy">Artikel & Tips</a>
-            <span>/</span>
-            <span id="bread-title" class="text-taraNavy font-semibold truncate max-w-[200px] sm:max-w-md">Detail</span>
+            <span id="bread-title" class="text-taraNavy font-semibold truncate max-w-[220px] sm:max-w-md">Detail Bacaan</span>
         </nav>
 
         <!-- Artikel Card Utama -->
@@ -82,11 +136,11 @@
                     Memuat Judul...
                 </h1>
 
-                <p id="detail-caption" class="text-slate-500 text-sm sm:text-base italic border-l-2 border-taraGold pl-3.5">
+                <p id="detail-caption" class="text-slate-500 text-sm sm:text-base italic border-l-4 border-taraGold pl-4 bg-taraGold-light/60 py-2.5 pr-3 rounded-r-xl">
                 </p>
 
                 <div class="pt-2 flex items-center gap-2.5 text-xs text-slate-600 font-medium">
-                    <div class="w-8 h-8 rounded-full bg-taraNavy/10 text-taraNavy flex items-center justify-center font-bold">
+                    <div class="w-8 h-8 rounded-full bg-taraNavy text-taraGold flex items-center justify-center font-bold shadow-sm">
                         <i class="fa-solid fa-pen-nib"></i>
                     </div>
                     <span>Ditulis oleh <strong id="detail-author" class="text-taraNavy">OSIS Tarakanita 2</strong></span>
@@ -99,12 +153,13 @@
             </div>
 
             <!-- Section 1-3 Foto Dokumentasi -->
-            <div class="px-6 sm:px-10 pb-10 pt-4 border-t border-slate-100 bg-slate-50/50">
+            <div class="px-6 sm:px-10 pb-10 pt-6 border-t border-slate-100 bg-slate-50/70">
                 <div class="mb-5">
-                    <h2 class="text-lg font-bold text-taraNavy flex items-center gap-2">
+                    <span class="text-taraGold font-bold text-[11px] tracking-widest uppercase">Arsip Visual</span>
+                    <h2 class="text-lg sm:text-xl font-extrabold text-taraNavy flex items-center gap-2">
                         <i class="fa-solid fa-camera text-taraGold"></i> Dokumentasi Terkait
                     </h2>
-                    <p class="text-xs text-slate-500">Klik foto untuk melihat ukuran penuh.</p>
+                    <p class="text-xs text-slate-500">Klik foto untuk memperbesar tampilan penuh.</p>
                 </div>
 
                 <!-- Grid Foto (Otomatis menyesuaikan 1, 2, atau 3 foto) -->
@@ -113,36 +168,100 @@
 
         </article>
 
-        <!-- Navigasi Bawah -->
-        <div class="mt-8 flex justify-between items-center">
-            <a href="index.html#literasi" class="text-sm font-semibold text-slate-600 hover:text-taraNavy flex items-center gap-2">
-                <i class="fa-solid fa-house"></i> Beranda Utama
-            </a>
-            <a href="literasi.html" class="bg-taraNavy hover:bg-taraNavy-800 text-white text-sm font-semibold px-6 py-3 rounded-xl shadow transition-all">
-                Lihat Artikel & Tips Lainnya <i class="fa-solid fa-arrow-right ml-1.5"></i>
+        <!-- Tombol Bawah ke Semua Artikel -->
+        <div class="mt-8 flex justify-end">
+            <a href="literasi.html" class="bg-taraNavy hover:bg-taraNavy-800 text-white text-xs sm:text-sm font-semibold px-6 py-3 rounded-xl shadow-md hover:shadow-lg transition-all inline-flex items-center gap-2 border border-taraGold/30">
+                Lihat Artikel & Tips Lainnya &amp; Tips <i class="fa-solid fa-arrow-right text-taraGold"></i>
             </a>
         </div>
 
     </main>
 
     <!-- Modal Preview Foto -->
-    <div id="photo-modal" onclick="this.classList.add('hidden')" class="fixed inset-0 z-50 bg-black/90 hidden flex flex-col items-center justify-center p-4 cursor-zoom-out">
-        <img id="modal-photo-img" src="" alt="Preview" class="max-h-[80vh] max-w-full rounded-xl shadow-2xl object-contain">
-        <p id="modal-photo-caption" class="text-white text-sm mt-3 text-center max-w-2xl"></p>
+    <div id="photo-modal" onclick="this.classList.add('hidden')" class="fixed inset-0 z-50 bg-taraNavy-900/95 backdrop-blur-md hidden flex flex-col items-center justify-center p-4 cursor-zoom-out">
+        <img id="modal-photo-img" src="" alt="Preview" class="max-h-[80vh] max-w-full rounded-xl shadow-2xl object-contain border border-white/10">
+        <p id="modal-photo-caption" class="text-white text-sm mt-3 text-center max-w-2xl font-medium"></p>
+        <span class="text-xs text-taraGold mt-1">Klik di mana saja untuk menutup</span>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-taraNavy-900 text-slate-400 py-6 text-center text-xs border-t border-slate-800 mt-10">
-        <p>&copy; 2026 OSIS SMA Tarakanita 2 Jakarta. Hak Cipta Dilindungi.</p>
+    <!-- FOOTER & KONTAK (Sama Persis dengan Homepage) -->
+    <footer id="kontak" class="bg-gradient-to-b from-[#254A80] to-[#172E52] text-white border-t border-white/10 mt-12">
+        <div class="container mx-auto px-4 lg:px-8 py-16 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                
+                <!-- Col 1: About OSIS -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-taraGold text-xl font-bold">
+                            <img src="downloads/tarakanitalogo.png" alt="Tarakanita" onerror="this.style.display='none'"> 
+                        </div>
+                        <span class="text-lg font-bold tracking-tight">OSIS SMA Tarakanita 2</span>
+                    </div>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                        Organisasi Siswa Intra Sekolah SMA Tarakanita 2 Pluit, Jakarta Utara. Berkomitmen membentuk pemimpin muda berkarakter Cc5+.
+                    </p>
+                    <!-- Social Links -->
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="https://instagram.com/osis_smatarki2?rpxt=MTlkdXFyY2p4azZ3dA==" target="_blank" class="w-9 h-9 rounded-full bg-white/10 hover:bg-taraGold hover:text-taraNavy flex items-center justify-center text-slate-300 transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://tiktok.com" target="_blank" class="w-9 h-9 rounded-full bg-white/10 hover:bg-taraGold hover:text-taraNavy flex items-center justify-center text-slate-300 transition-colors">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" class="w-9 h-9 rounded-full bg-white/10 hover:bg-taraGold hover:text-taraNavy flex items-center justify-center text-slate-300 transition-colors">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigasi Cepat -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-taraGold mb-4">Navigasi Cepat</h4>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-300">
+                        <li><a href="index.html#beranda" class="hover:text-taraGold transition-colors">Beranda Utama</a></li>
+                        <li><a href="index.html#nilai-visi" class="hover:text-taraGold transition-colors">Nilai Cc5+ &amp; Visi Misi</a></li>
+                        <li><a href="pengurus.html" class="hover:text-taraGold transition-colors">Kabinet Pengurus</a></li>
+                        <li><a href="program.html" class="hover:text-taraGold transition-colors">Program Kerja &amp; Event</a></li>
+                        <li><a href="galeri.html" class="hover:text-taraGold transition-colors">Galeri Dokumentasi</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Sekretariat OSIS -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-taraGold mb-4">Sekretariat</h4>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed space-y-2">
+                        <span class="block"><i class="fa-solid fa-location-dot text-taraGold mr-1.5"></i> Jl. Pluit Permai No.1, Pluit, Kec. Penjaringan, Jakarta Utara, DKI Jakarta 14450</span>
+                        <span class="block"><i class="fa-solid fa-envelope text-taraGold mr-1.5"></i> osis@smatarakanita2.sch.id</span>
+                        <span class="block"><i class="fa-brands fa-whatsapp text-taraGold mr-1.5"></i> +62 812-3456-7890 (Humas)</span>
+                    </p>
+                </div>
+
+                <!-- Col 4: Tagline -->
+                <div>
+                    <div class="inline-block bg-white/5 border border-white/10 p-3 rounded-xl text-xs text-slate-300">
+                        <span class="font-semibold text-taraGold block mb-1">Tagline Tarakanita:</span>
+                        "Cerdas, Berintegritas, Memimpin dengan Kasih"
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-slate-800 mt-12 pt-6 text-center text-xs text-slate-400 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>&copy; <span id="yr"></span> OSIS SMA Tarakanita 2 Jakarta. Hak Cipta Dilindungi.</p>
+                <p class="text-slate-400">Dirancang dengan Kebanggaraan &amp; Dijiwai Semangat Cc5+</p>
+            </div>
+        </div>
     </footer>
 
     <script src="js/literasi-data.js"></script>
     <script>
+        document.getElementById('yr').textContent = new Date().getFullYear();
+
         const params = new URLSearchParams(window.location.search);
         const articleId = params.get('id');
         const article = literasiData.find(item => item.id === articleId) || literasiData[0];
 
-        document.title = `${article.title} - OSIS Tarakanita 2`;
+        document.title = `${article.title} - OSIS SMA Tarakanita 2 Jakarta`;
         document.getElementById('bread-title').innerText = article.title;
         document.getElementById('detail-badge').innerText = article.badge;
         document.getElementById('detail-badge').className = `px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${
@@ -168,11 +287,16 @@
         }
 
         photosContainer.innerHTML = photos.map(photo => `
-            <figure onclick="previewPhoto('${photo.url}', '${photo.caption.replace(/'/g, "\\'")}')" class="group bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm cursor-zoom-in">
-                <div class="aspect-[4/3] overflow-hidden bg-slate-200">
+            <figure onclick="previewPhoto('${photo.url}', '${photo.caption.replace(/'/g, "\\'")}')" class="group bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-zoom-in">
+                <div class="aspect-[4/3] overflow-hidden bg-slate-200 relative">
                     <img src="${photo.url}" alt="${photo.caption}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-taraNavy-900/0 group-hover:bg-taraNavy-900/35 transition flex items-center justify-center">
+                        <span class="opacity-0 group-hover:opacity-100 bg-taraGold text-taraNavy px-3.5 py-1.5 rounded-full text-xs font-bold shadow-lg transition">
+                            <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Perbesar
+                        </span>
+                    </div>
                 </div>
-                <figcaption class="p-3 text-xs text-slate-600 leading-relaxed">
+                <figcaption class="p-3.5 text-xs text-slate-600 leading-relaxed">
                     ${photo.caption}
                 </figcaption>
             </figure>
