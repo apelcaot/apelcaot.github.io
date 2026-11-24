@@ -2,55 +2,6 @@
 // Dipakai oleh index.html (kartu event & pencarian) dan detail.html (halaman detail).
 const eventsData = [
     {
-        id: "tarakupang-2026",
-        title: "TARAKUPANG 2026",
-        cat: "akan-datang",
-        date: "15 - 20 November 2026",
-        desc: "Cup tahunan SMA Tarakanita 2 mencakup Basket, Futsal, Modern Dance, dan E-Sports.",
-        icon: "fa-trophy",
-        img: "https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=1600&auto=format&fit=crop",
-        location: "Kampus SMA Tarakanita 2, Pluit - Jakarta Utara",
-        pic: "Sekbid 2 (Olahraga) & Sekbid 3 (Seni)",
-        participants: "Siswa SMP & SMA se-DKI Jakarta",
-        about: [
-            "TARAKUPANG adalah kompetisi tahunan terbesar yang diselenggarakan oleh OSIS SMA Tarakanita 2 Jakarta. Tahun ini, TARAKUPANG mengundang lebih dari 40 sekolah di DKI Jakarta untuk bertanding secara sportif di bidang olahraga, seni, dan e-sports.",
-            "Lebih dari sekadar kompetisi, TARAKUPANG menjadi ruang perjumpaan antarsekolah yang menghidupi nilai Celebration, Competence, dan Community dalam semangat Cc5+."
-        ],
-        goals: [
-            "Mewadahi bakat dan minat siswa di bidang olahraga, seni, dan teknologi.",
-            "Mempererat persaudaraan antarsekolah di DKI Jakarta.",
-            "Melatih kepemimpinan dan manajemen acara bagi pengurus OSIS."
-        ],
-        competitions: [
-            { name: "Basket 3x3 & 5x5", icon: "fa-basketball", desc: "Kategori putra dan putri. Sistem gugur dengan babak penyisihan grup.", quota: "16 tim per kategori" },
-            { name: "Futsal", icon: "fa-futbol", desc: "Kategori putra. Setiap tim terdiri dari maksimal 12 pemain dan 2 official.", quota: "24 tim" },
-            { name: "Modern Dance", icon: "fa-music", desc: "Penampilan tim 5-10 orang dengan durasi 5-7 menit. Penilaian: koreografi, kekompakan, dan ekspresi.", quota: "20 tim" },
-            { name: "E-Sports (Mobile Legends)", icon: "fa-gamepad", desc: "Format 5v5, best of 3 di babak penyisihan dan best of 5 di final.", quota: "32 tim" }
-        ],
-        schedule: [
-            { date: "24 Okt - 8 Nov 2026", activity: "Pendaftaran tim peserta" },
-            { date: "10 November 2026", activity: "Technical meeting & pengundian grup" },
-            { date: "15 - 19 November 2026", activity: "Babak penyisihan hingga semifinal" },
-            { date: "20 November 2026", activity: "Grand final, closing ceremony & penyerahan piala" }
-        ],
-        requirements: [
-            "Peserta merupakan siswa aktif yang dibuktikan dengan kartu pelajar.",
-            "Setiap tim membawa surat rekomendasi dari sekolah asal.",
-            "Satu peserta hanya boleh terdaftar di satu tim per cabang lomba.",
-            "Wajib mengikuti technical meeting (diwakili minimal 1 orang per tim)."
-        ],
-        registration: {
-            open: true,
-            deadline: "8 November 2026",
-            steps: [
-                "Hubungi Sekretariat OSIS atau Humas melalui WhatsApp untuk meminta formulir pendaftaran.",
-                "Lengkapi formulir beserta data anggota tim dan surat rekomendasi sekolah.",
-                "Kirimkan berkas ke email OSIS paling lambat tanggal batas pendaftaran.",
-                "Tunggu konfirmasi dan undangan technical meeting dari panitia."
-            ]
-        }
-    },
-    {
         id: "classmeeting-2026",
         title: "Lomba Classmeeting 2026",
         cat: "akan-datang",
@@ -73,10 +24,14 @@ const eventsData = [
         ],
         competitions: [
             { name: "Lomba Debat Bahasa Indonesia", icon: "fa-comments", desc: "Tim terdiri dari 3 orang perwakilan kelas. Mosi diumumkan saat technical meeting (Promptu).", quota: "1 tim per kelas" },
-            { name: "Lomba Voli", icon: "fa-volleyball", desc: "Setiap kelas menampilkan kostum adat dari daerah yang diundi, disertai narasi singkat.", quota: "1 tim per kelas" },
-	    { name: "Basket 3x3 & 5x5", icon: "fa-basketball", desc: "Kategori putra dan putri. Sistem gugur dengan babak penyisihan grup.", quota: "16 tim per kategori" },
-            { name: "Futsal", icon: "fa-futbol", desc: "Kategori putra. Setiap tim terdiri dari maksimal 12 pemain dan 2 official.", quota: "24 tim" },
-            { name: "E-Sports (Mobile Legends)", icon: "fa-gamepad", desc: "Format 5v5, best of 3 di babak penyisihan dan best of 5 di final.", quota: "32 tim" }
+            { name: "Lomba Voli", icon: "fa-volleyball", desc: "6 pemain utama (3 putra dan 3 putri) dan 2 pemain cadangan.", quota: "1 tim per kelas" },
+	 	    { name: "Basket 5x5", icon: "fa-basketball", desc: "Kategori putra dan putri. Sistem gugur dengan babak penyisihan grup.", quota: "1 tim per kategori, per kelas" },
+            { name: "Futsal", icon: "fa-futbol", desc: "Kategori putra. 5 Pemain inti (1 Kiper), serta maksimal 2 pemain cadangan.", quota: "1 tim per kelas" },
+			{ name: "Business Plan", icon: "fa-briefcase", desc: "Kategori putra dan putri. Sistem gugur dengan babak penyisihan grup.", quota: "16 tim per kategori" },
+            { name: "Tennis Meja", icon: "fa-table-tennis-paddle-ball", desc: "Kategori Putra/Putri, 1 perwakilan kelas. Sistem gugur dengan babak penyisihan grup.", quota: "24 tim" },
+			{ name: "Lomba Kebersihan Kelas", icon: "fa-broom", desc: "Semua siswa wajib berperan aktif membersihkan kelas masing-masing.", quota: "16 tim per kategori" },
+            { name: "Create The Beat", icon: "fa-music", desc: "Kategori putra/putri. Minimal 2 orang dan maksimal 5 orang.", quota: "24 tim" },
+            { name: "E-Sports (Mobile Legends)", icon: "fa-gamepad", desc: "Format 5v5, best of 1 hingga semifinal dan best of 3 untuk final.", quota: "1 time per kelas" }
         ],
         schedule: [
             { date: "14 - 21 Oktober 2026", activity: "Pendaftaran peserta per kelas" },
@@ -198,7 +153,7 @@ const eventsData = [
         requirements: [],
         registration: {
             open: false,
-            note: "Classmeeting telah selesai dilaksanakan. Selamat kepada seluruh pemenang!"
+            note: "Encore Day telah selesai dilaksanakan. Selamat kepada seluruh pemenang!"
         }
     }
 ];
